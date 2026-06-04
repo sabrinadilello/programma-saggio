@@ -172,7 +172,7 @@ export default function App() {
                     <div className="animate-fadeIn space-y-8">
                         <div className="leading-relaxed text-center px-2">
                             <p className="text-gray-800 text-base m-0">
-                                <span className="font-bold">Dieci anni dopo il primo passo</span><br />
+                                <span className="font-bold italic">Dieci anni dopo il primo passo</span><br />
                                 è un viaggio tra ricordi, sogni, paure e traguardi che hanno segnato il cammino della nostra scuola. A guidare questo racconto sono Insicurezza, Coraggio e Ambizione: tre voci che accompagnano il pubblico attraverso dieci anni di crescita, emozioni e passione, celebrando non solo le persone che hanno reso possibile questa storia, ma anche tutti quei momenti indimenticabili che hanno lasciato un segno nel cuore della nostra scuola.
                             </p>
                         </div>
@@ -186,7 +186,7 @@ export default function App() {
                                 </div>
                             </div>
                             <div className="flex flex-col gap-3">
-                                <button onClick={() => window.open('https://maps.google.com/?q=Teatro+San+Raffaele+Roma')} className="bg-[#c8151b] text-white py-3 rounded-xl font-bold border-none cursor-pointer active:scale-95 transition-all text-center">👉 Apri in Google Maps</button>
+                                <button onClick={() => window.open('https://maps.google.com/?q=Teatro+San+Raffaele+Roma')} className="bg-[#c8151b] text-white py-3 rounded-xl font-bold border-none cursor-pointer active:scale-95 transition-all text-center">Apri in Google Maps</button>
                                 <button onClick={() => window.open('https://www.teatrosanraffaele.it/')} className="border border-gray-300 py-3 rounded-xl font-bold text-gray-700 bg-white cursor-pointer active:scale-95 transition-all text-center">Sito Ufficiale Teatro</button>
                             </div>
                         </div>
@@ -230,7 +230,7 @@ export default function App() {
                             </div>
                             <button onClick={() => window.open('https://maps.google.com/?q=Via+Mare+di+Bering+42,+Ostia')} className="w-full bg-white p-5 rounded-xl shadow-md border-none cursor-pointer active:scale-95 transition-all text-left">
                                 <p className="text-base text-gray-800 m-0 font-semibold">Via Mare di Bering 42, Ostia</p>
-                                <p className="text-[#c8151b] font-bold text-sm mt-2 flex items-center gap-1">👉 Apri in Google Maps <ExternalLink size={14} /></p>
+                                <p className="text-[#c8151b] font-bold text-sm mt-2 flex items-center gap-1">Apri in Google Maps <ExternalLink size={14} /></p>
                             </button>
                         </div>
                         <div className="section">
