@@ -195,30 +195,17 @@ export default function App() {
 
                 {/* PAGE 4 - CONTATTI */}
                 {currentPage === 4 && (
-                    <div className="animate-fadeIn space-y-8 text-left">
+                    <div className="animate-fadeIn space-y-8">
                         <img src="/staff.jpg" className="w-full rounded-2xl shadow-sm object-contain bg-white p-2" alt="Staff" />
-
-                        <div className="flex items-center gap-2 text-[#c8151b]">
-                            <MapPin size={28} /> <h3 className="text-xl font-bold m-0 text-gray-900">Dove siamo</h3>
-                        </div>
-                        <button onClick={() => window.open('https://maps.google.com/?q=Via+Mare+di+Bering+42,+Ostia')} className="w-full bg-white p-5 rounded-2xl shadow-sm border-none flex items-center gap-4 text-left cursor-pointer active:scale-95 transition-all">
-                            <div className="flex-1">
-                                <p className="font-semibold text-gray-800 m-0">Via Mare di Bering 42, Ostia</p>
-                                <p className="text-[#c8151b] text-sm font-bold mt-2 italic">👉 Apri in Google Maps</p>
+                        <div className="text-left space-y-8">
+                            <div className="flex items-center gap-2 mb-4 text-[#c8151b]">
+                                <MapPin size={28} /> <h3 className="text-xl font-bold m-0 text-gray-900">Dove siamo</h3>
                             </div>
-                        </button>
-
-                        <div className="flex items-center gap-2 text-[#c8151b] pt-4">
-                            <Phone size={28} /> <h3 className="text-xl font-bold m-0 text-gray-900">Contatti</h3>
-                        </div>
-                        <div className="space-y-3">
-                            <button onClick={() => window.open('tel:+393922752576')} className="w-full bg-white p-4 rounded-xl shadow-sm border-none flex items-center gap-4 cursor-pointer">
-                                <Phone size={18} className="text-gray-400" />
-                                <div><p className="text-[10px] text-gray-400 m-0 font-bold uppercase">Telefono</p><p className="font-semibold m-0 text-sm">392 2752576</p></div>
-                            </button>
-                            <button onClick={() => window.open('mailto:info@centrostudiartisceniche.it')} className="w-full bg-white p-4 rounded-xl shadow-sm border-none flex items-center gap-4 cursor-pointer">
-                                <Mail size={18} className="text-gray-400" />
-                                <div><p className="text-[10px] text-gray-400 m-0 font-bold uppercase">Email</p><p className="font-semibold m-0 text-sm">info@centrostudiartisceniche.it</p></div>
+                            <button onClick={() => window.open('https://maps.google.com/?q=Via+Mare+di+Bering+42,+Ostia')} className="w-full bg-white p-5 rounded-2xl shadow-sm border-none flex items-center gap-4 text-left cursor-pointer active:scale-95 transition-all">
+                                <div className="flex-1">
+                                    <p className="font-semibold text-gray-800 m-0">Via Mare di Bering 42, Ostia</p>
+                                    <p className="text-[#c8151b] text-sm font-bold mt-2 italic">👉 Apri in Google Maps</p>
+                                </div>
                             </button>
                         </div>
                     </div>
