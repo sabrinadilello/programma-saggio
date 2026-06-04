@@ -15,7 +15,7 @@ const Instagram = ({ size = 24, ...props }: SVGProps<SVGSVGElement> & { size?: n
     </svg>
 );
 
-// --- DATI PROGRAMMA DI SALA ---
+// --- DATI PROGRAMMA ---
 const PROGRAMMA_DATA = [
     {
         id: 'p1',
@@ -24,8 +24,8 @@ const PROGRAMMA_DATA = [
         image: '/primotempo.jpeg',
         description: "Liberamente ispirato al celebre balletto di Rossini e Respighi, racconta una storia magica ambientata in un negozio di giocattoli molto speciale.",
         choreographies: [
-            { title: "1) PRIMI PASSI", courses: "Gioco danza, Propedeutico, Accademico 1, 2 e 3", choreographer: "Danila Valentini", description: "L'apertura dedicata ai più piccoli della scuola." },
-            { title: "2) LA BOTTEGA FANTASTICA", courses: "Balletto in un atto", choreographer: "Matteo D’Alessio e Danila Valentini", description: "Le ballerine di can-can e i preziosi automi prendono vita." },
+            { title: "1) PRIMI PASSI", courses: "Gioco danza, Propedeutico, Accademico 1, 2 e 3", choreographer: "Danila Valentini" },
+            { title: "2) LA BOTTEGA FANTASTICA", courses: "Balletto in un atto", choreographer: "Matteo D’Alessio e Danila Valentini" },
         ]
     },
     {
@@ -87,12 +87,8 @@ export default function App() {
         { page: 1, Icon: Home, label: 'Home' },
         { page: 2, Icon: Info, label: 'Info' },
         { page: 3, Icon: BookOpen, label: 'Programma' },
-        { page: 4, Icon: usersIcon, label: 'Staff' },
-        { page: 5, Icon: Phone, label: 'Contatti' },
+        { page: 4, Icon: Phone, label: 'Contatti' },
     ];
-
-    // Helper per le icone della nav
-    function usersIcon(props: any) { return <Users {...props} /> }
 
     return (
         <div className="min-h-screen bg-[#F8F8F8] text-[#1A1A1A] pb-24 font-sans overflow-x-hidden">
@@ -104,7 +100,7 @@ export default function App() {
                 @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
             `}</style>
 
-            {/* SIPARIO (Solo in Home) */}
+            {/* SIPARIO (Solo Home) */}
             {!animationFinished && currentPage === 1 && (
                 <div className="fixed inset-0 z-[100] pointer-events-none flex overflow-hidden">
                     <div className={`w-1/2 h-full transition-transform duration-[2500ms] ease-in-out z-[101] ${curtainsOpen ? '-translate-x-full' : 'translate-x-0'}`}>
@@ -116,7 +112,6 @@ export default function App() {
                 </div>
             )}
 
-            {/* NAV BAR */}
             <nav className="fixed inset-x-0 bottom-0 z-50 bg-white/90 backdrop-blur-md border-t border-gray-200 shadow-lg">
                 <div className="flex justify-around items-center py-3">
                     {navItems.map((item) => (
@@ -131,10 +126,10 @@ export default function App() {
 
             <header className="header-gradient text-white pt-12 pb-8 px-6 text-center shadow-md">
                 {currentPage === 2 ? (
-                    <div className="animate-fadeIn">
-                        <h1 className="text-2xl font-bold uppercase tracking-widest m-0 italic text-white">Saggio 2026</h1>
+                    <>
+                        <h1 className="text-2xl font-bold uppercase tracking-widest m-0 italic">Saggio 2026</h1>
                         <p className="text-sm opacity-80 mt-1">Dieci anni dopo il primo passo</p>
-                    </div>
+                    </>
                 ) : (
                     <div className="h-8" />
                 )}
@@ -146,30 +141,27 @@ export default function App() {
                 {currentPage === 1 && (
                     <div className="animate-fadeIn space-y-10">
                         <img src="/logo.png" className="w-full h-auto mb-8" alt="Logo" />
-
-                        <div className="space-y-6 text-gray-700 leading-relaxed text-base text-center">
-                            <p className="italic font-normal">Ci sono momenti che si attendono a lungo.</p>
-                            <p className="italic font-normal">Momenti in cui il cuore batte più forte, le luci si abbassano, il silenzio avvolge la sala… e poi tutto inizia.</p>
-                            <p className="font-bold text-gray-900">Questa sera è uno di quei momenti.</p>
-                            <p className="italic font-normal">È con grande gioia che vi accogliamo al nostro saggio di fine anno: una celebrazione di ogni singolo passo compiuto dalle nostre allieve – dalle più piccole alle più grandi.</p>
-                            <p className="italic font-normal">Quello che vedrete sul palco è il risultato di mesi di impegno, disciplina, emozioni condivise.</p>
-                            <p className="italic font-normal">Quando si danza, si cresce. Si scopre sé stessi, si trova il coraggio di brillare davanti agli altri.</p>
-                            <p className="font-bold pt-4 text-gray-900 text-lg">Grazie per essere qui. Buono spettacolo!</p>
+                        <div className="space-y-6 text-gray-700 leading-relaxed text-base">
+                            <p className="italic">Ci sono momenti che si attendono a lungo.</p>
+                            <p className="italic">Momenti in cui il cuore batte più forte, le luci si abbassano, il silenzio avvolge la sala… e poi tutto inizia.</p>
+                            <p className="font-bold">Questa sera è uno di quei momenti.</p>
+                            <p className="italic">È con grande gioia che vi accogliamo al nostro saggio di fine anno: una celebrazione di ogni singolo passo compiuto dalle nostre allieve – dalle più piccole alle più grandi.</p>
+                            <p className="italic">Quello che vedrete sul palco è il risultato di mesi di impegno, disciplina, emozioni condivise.</p>
+                            <p className="italic">Quando si danza, si cresce. Si scopre sé stessi, si trova il coraggio di brillare davanti agli altri.</p>
+                            <p className="font-bold pt-4 text-gray-900">Grazie per essere qui. Buono spettacolo!</p>
                         </div>
-
                         <div className="py-10 border-y border-gray-200">
-                            <h2 className="text-red-600 text-2xl font-bold mb-6 uppercase tracking-wider">Dediche</h2>
+                            <h2 className="text-[#c8151b] text-2xl font-bold mb-6 uppercase tracking-wider">Dediche</h2>
                             <div className="space-y-6 italic text-gray-600 text-lg">
                                 <p>"A chi ha creduto in sé stesso per la prima volta."</p>
                                 <p>"A chi ha scelto di brillare, nonostante la fatica."</p>
                                 <p>"A chi ha danzato con il cuore e con l'anima."</p>
-                                <p className="font-bold text-red-600 text-xl mt-8 not-italic">Questo saggio è per voi.</p>
+                                <p className="font-bold text-[#c8151b] text-xl mt-8 not-italic">Questo saggio è per voi.</p>
                             </div>
                         </div>
-
                         <div className="pt-4">
-                            <p className="font-bold italic text-xl m-0">Matteo D'Alessio</p>
-                            <p className="text-gray-500 text-xs uppercase tracking-widest mt-1 font-semibold">Direzione Artistica – Centro Studi Arti Sceniche</p>
+                            <p className="font-bold italic text-xl m-0 text-gray-900">Matteo D'Alessio</p>
+                            <p className="text-gray-400 text-xs uppercase tracking-widest mt-1 font-semibold">Direzione Artistica – Centro Studi Arti Sceniche</p>
                         </div>
                     </div>
                 )}
@@ -177,16 +169,12 @@ export default function App() {
                 {/* PAGE 2 - INFO */}
                 {currentPage === 2 && (
                     <div className="animate-fadeIn space-y-8 text-left">
-                        {/* DESCRIZIONE RICHIESTA */}
                         <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 leading-relaxed text-center">
                             <p className="text-gray-800 text-base m-0">
                                 <span className="font-bold">Dieci anni dopo il primo passo</span> è un viaggio tra ricordi, sogni, paure e traguardi che hanno segnato il cammino della nostra scuola. A guidare questo racconto sono Insicurezza, Coraggio e Ambizione: tre voci che accompagnano il pubblico attraverso dieci anni di crescita, emozioni e passione, celebrando non solo le persone che hanno reso possibile questa storia, ma anche tutti quei momenti indimenticabili che hanno lasciato un segno nel cuore della nostra scuola.
                             </p>
                         </div>
-
                         <img src="/locandina.jpeg" className="w-full rounded-2xl shadow-xl border-4 border-white mb-8" alt="Locandina" />
-
-                        {/* TEATRO MODIFICATO */}
                         <div className="bg-white p-6 rounded-2xl shadow-md border border-gray-100">
                             <div className="flex items-start gap-4 mb-8">
                                 <MapPin size={32} className="text-[#c8151b] shrink-0 mt-1" />
@@ -195,7 +183,6 @@ export default function App() {
                                     <p className="text-gray-600 text-sm mt-1">Via di S. Raffaele, 6, 00148 Roma RM</p>
                                 </div>
                             </div>
-
                             <div className="flex flex-col gap-3">
                                 <button onClick={() => window.open('https://maps.google.com/?q=Teatro+San+Raffaele+Roma')} className="bg-[#c8151b] text-white py-3 rounded-xl font-bold border-none cursor-pointer active:scale-95 transition-all text-center">Apri in Google Maps</button>
                                 <button onClick={() => window.open('https://www.teatrosanraffaele.it/')} className="border border-gray-300 py-3 rounded-xl font-bold text-gray-700 bg-white cursor-pointer active:scale-95 transition-all text-center">Sito Ufficiale Teatro</button>
@@ -212,48 +199,18 @@ export default function App() {
                             <div key={section.id}>
                                 <h2 className="text-xl font-bold text-[#c8151b] m-0 uppercase">{section.title}</h2>
                                 <p className="text-lg font-semibold text-gray-800 mb-6">{section.subtitle}</p>
-                                <img src={section.image} className="w-full rounded-xl shadow-md mb-6 aspect-video object-cover" alt="" />
-                                <div className="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 text-sm mb-6 leading-relaxed text-left italic text-gray-600">{section.description}</div>
+                                <img src={section.image} className="w-full rounded-xl shadow-md mb-6 aspect-video object-cover" />
+                                <div className="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 text-sm mb-6 leading-relaxed text-left">{section.description}</div>
                                 <div className="space-y-3">
                                     {section.choreographies.map((ch, idx) => (<ChoreographyItem key={idx} {...ch} />))}
                                 </div>
                             </div>
                         ))}
-                        <div className="mt-12 animate-fadeIn">
-                            <Heart size={32} className="text-[#c8151b] mx-auto mb-3" />
-                            <h3 className="text-xl font-bold text-[#c8151b] mb-4">Ringraziamenti</h3>
-                            <div className="bg-white p-8 rounded-2xl shadow-md border-2 border-[#D4AF37] text-sm text-gray-700 leading-relaxed">
-                                Grazie a tutte le allieve, alle famiglie e a chi ha collaborato dietro le quinte per rendere possibili questi dieci anni di magia.
-                            </div>
-                        </div>
                     </div>
                 )}
 
-                {/* PAGE 4 - STAFF */}
+                {/* PAGE 4 - CONTATTI E STAFF */}
                 {currentPage === 4 && (
-                    <div className="animate-fadeIn space-y-8">
-                        <h2 className="text-2xl font-bold text-gray-800 uppercase tracking-widest mb-4">Staff</h2>
-                        <div className="space-y-4 text-left">
-                            {[
-                                { n: "MATTEO D’ALESSIO", r: "Direttore artistico e insegnante corsi di danza" },
-                                { n: "ROZENN CORBELL", r: "Insegnante corso contemporaneo avanzato e danza adulti" },
-                                { n: "GIORGIA MACRINO", r: "Insegnante corsi di recitazione e musical" },
-                                { n: "PAMELA FADDA", r: "Insegnante corsi di canto" },
-                                { n: "ANDREA SGARRA", r: "Insegnante corsi di hip hop" },
-                                { n: "DANILA VALENTINI", r: "Insegnante corsi di gioco danza" },
-                                { n: "DONATELLA PACE", r: "Assistente e collaboratrice amministrativa" }
-                            ].map((m, i) => (
-                                <div key={i} className="bg-white p-5 rounded-xl shadow-sm border border-gray-50">
-                                    <p className="font-bold text-gray-900 m-0 text-sm uppercase tracking-wide">{m.n}</p>
-                                    <p className="text-xs text-gray-500 m-0 mt-1 italic">{m.r}</p>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                )}
-
-                {/* PAGE 5 - CONTATTI */}
-                {currentPage === 5 && (
                     <div className="animate-fadeIn space-y-10 text-left">
                         <img src="/staff.jpg" className="w-full rounded-2xl shadow-sm object-contain bg-white p-2" alt="Staff" />
 
@@ -281,25 +238,48 @@ export default function App() {
                             </button>
                         </div>
 
-                        <div className="section pb-10">
+                        <div className="section">
                             <div className="flex items-center gap-3 mb-4 text-[#c8151b]">
                                 <Globe size={32} /> <h3 className="text-xl font-bold m-0 text-gray-900">Online</h3>
                             </div>
-                            <button onClick={() => window.open('https://www.centrostudiartisceniche.it')} className="w-full bg-white p-5 rounded-xl shadow-md border-none mb-3 flex items-center gap-4 cursor-pointer text-left">
+                            <button onClick={() => window.open('https://www.centrostudiartisceniche.it')} className="w-full bg-white p-5 rounded-xl shadow-md border-none mb-3 flex items-center gap-4 cursor-pointer active:scale-95 transition-all text-left">
                                 <Globe size={20} className="text-gray-400" />
                                 <div className="flex-1"><p className="text-xs font-bold text-gray-400 uppercase mb-1">Sito Web:</p><p className="text-sm text-gray-800 m-0">www.centrostudiartisceniche.it</p></div>
                                 <ExternalLink size={16} className="text-[#c8151b]" />
                             </button>
-                            <button onClick={() => window.open('https://instagram.com/centrostudiartisceniche')} className="w-full bg-white p-5 rounded-xl shadow-md border-none mb-3 flex items-center gap-4 cursor-pointer text-left">
+                            <button onClick={() => window.open('https://instagram.com/centrostudiartisceniche')} className="w-full bg-white p-5 rounded-xl shadow-md border-none mb-3 flex items-center gap-4 cursor-pointer active:scale-95 text-left">
                                 <Instagram size={20} className="text-gray-400" />
                                 <div className="flex-1"><p className="text-xs font-bold text-gray-400 uppercase mb-1">Instagram:</p><p className="text-sm text-gray-800 m-0">@centrostudiartisceniche</p></div>
                                 <ExternalLink size={16} className="text-[#c8151b]" />
                             </button>
-                            <button onClick={() => window.open('https://facebook.com/centrostudiartisceniche')} className="w-full bg-white p-5 rounded-xl shadow-md border-none flex items-center gap-4 cursor-pointer text-left">
+                            <button onClick={() => window.open('https://facebook.com/centrostudiartisceniche')} className="w-full bg-white p-5 rounded-xl shadow-md border-none flex items-center gap-4 cursor-pointer active:scale-95 text-left">
                                 <Facebook size={20} className="text-gray-400" />
                                 <div className="flex-1"><p className="text-xs font-bold text-gray-400 uppercase mb-1">Facebook:</p><p className="text-sm text-gray-800 m-0">Centro Studi Arti Sceniche</p></div>
                                 <ExternalLink size={16} className="text-[#c8151b]" />
                             </button>
+                        </div>
+
+                        {/* SEZIONE STAFF INTEGRATA */}
+                        <div className="section pb-10">
+                            <div className="flex items-center gap-3 mb-6 text-[#c8151b]">
+                                <Users size={32} /> <h3 className="text-xl font-bold m-0 text-gray-900 uppercase tracking-widest">Staff</h3>
+                            </div>
+                            <div className="space-y-4">
+                                {[
+                                    { n: "ROZENN CORBELL", r: "Insegnante corso contemporaneo avanzato e danza adulti" },
+                                    { n: "GIORGIA MACRINO", r: "Insegnante corsi di recitazione e musical" },
+                                    { n: "PAMELA FADDA", r: "Insegnante corsi di canto" },
+                                    { n: "ANDREA SGARRA", r: "Insegnante corsi di hip hop" },
+                                    { n: "DANILA VALENTINI", r: "Insegnante corsi di gioco danza" },
+                                    { n: "DONATELLA PACE", r: "Assistente e collaboratrice amministrativa" },
+                                    { n: "MATTEO D’ALESSIO", r: "Direttore artistico e insegnante corsi di danza" }
+                                ].map((m, i) => (
+                                    <div key={i} className="bg-white p-5 rounded-xl shadow-sm border border-gray-50">
+                                        <p className="font-bold text-gray-900 m-0 text-sm uppercase tracking-wide">{m.n}</p>
+                                        <p className="text-xs text-gray-500 m-0 mt-1 italic">{m.r}</p>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 )}
