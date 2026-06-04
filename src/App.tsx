@@ -15,17 +15,17 @@ const Instagram = ({ size = 24, ...props }: SVGProps<SVGSVGElement> & { size?: n
     </svg>
 );
 
-// --- DATI PROGRAMMA ---
+// --- DATI PROGRAMMA DI SALA AGGIORNATI ---
 const PROGRAMMA_DATA = [
     {
         id: 'p1',
         title: '🎬 PRIMO TEMPO',
         subtitle: 'La Bottega Fantastica',
         image: '/primotempo.jpeg',
-        description: "Liberamente ispirato al celebre balletto di Rossini e Respighi, racconta una storia magica ambientata in un negozio di giocattoli molto speciale.",
+        description: "Liberamente ispirato al celebre balletto di Gioachino Rossini e Ottorino Respighi, La Bottega Fantastica racconta una storia magica e senza tempo ambientata in un negozio di giocattoli molto speciale.\n\nUn giorno arrivano due famiglie con le loro figlie capricciose alla ricerca della bambola perfetta. La bottegaia mostra allora i suoi preziosi automi che, una volta caricati, prendono vita danzando in spettacolari esibizioni ma nessuna di quelle bambole sembra conquistare le due bambine.\n\nRassegnata, la creatrice decide infine di mostrare le sue ultime e più amate creazioni: due splendide ballerine di can-can. Le due bambole si esibiscono in una danza travolgente e piena di energia, tanto da incantare entrambe le famiglie, che desiderano acquistarle immediatamente. Poiché però esiste una sola coppia, la bottegaia decide di separarle e venderne una a ciascuna famiglia.\n\nQuando cala la sera e il negozio chiude, le due ballerine sono disperate all’idea di doversi separare. Ma allo scoccare delle dieci accade la magia: tutte le bambole della bottega prendono vita e, mosse dall’amicizia e dall’affetto, organizzano la fuga delle due ballerine, fingendone la misteriosa scomparsa.\n\nLa mattina seguente il negozio è nel caos: le ballerine non si trovano più e i clienti, convinti di essere stati ingannati, reagiscono con rabbia contro il bottegaio e la sua assistente. Ma proprio nel momento più difficile, tutte le bambole si animano improvvisamente per difendere il loro padrone e scacciare le famiglie infuriate.\n\nTornata la calma, il bottegaio e la sua assistente comprendono finalmente la straordinaria verità: quelle bambole non sono semplici automi, ma creature capaci di amicizia, lealtà e sentimento. Una favola poetica e divertente che celebra il valore dell’unione, della libertà e dell’affetto.",
         choreographies: [
-            { title: "1) PRIMI PASSI", courses: "Gioco danza, Propedeutico, Accademico 1, 2 e 3", choreographer: "Danila Valentini" },
-            { title: "2) LA BOTTEGA FANTASTICA", courses: "Balletto in un atto", choreographer: "Matteo D’Alessio e Danila Valentini" },
+            { title: "1) PRIMI PASSI", courses: "Corsi: Gioco danza, Propedeutico, Accademico 1, 2 e 3", choreographer: "Coreografia di Danila Valentini" },
+            { title: "2) LA BOTTEGA FANTASTICA – Balletto in un atto", courses: "Corsi: Gioco danza, Propedeutico, Accademico 1, 2 e 3", choreographer: "Coreografie di Matteo D’Alessio e Danila Valentini" },
         ]
     },
     {
@@ -33,18 +33,23 @@ const PROGRAMMA_DATA = [
         title: '🎬 SECONDO TEMPO',
         subtitle: 'Dieci Anni',
         image: '/secondotempo.jpeg',
-        description: "Un viaggio tra emozioni, paure, conquiste e sogni che, anno dopo anno, hanno dato forma alla nostra storia.",
+        description: "Ci sono ricordi che non smettono mai di danzare.\n\nQuesto secondo tempo è un viaggio tra emozioni, paure, conquiste e sogni che, anno dopo anno, hanno dato forma alla nostra storia. Ogni coreografia custodisce un frammento di ciò che siamo stati e di ciò che stiamo diventando: le prime timidezze, le sfide affrontate insieme, i sorrisi dietro le quinte, i palchi conquistati con coraggio.\n\nPerché dieci anni non sono soltanto un traguardo, ma il tempo necessario affinché un sogno impari a camminare. E forse, a volare.",
         choreographies: [
-            { title: '2017 - ABBRONZATISSIMA', courses: "Gioco danza", choreographer: "Danila Valentini" },
-            { title: '2018 – ANNI 90', courses: "Moderno 1, Hip Hop 2 e 3", choreographer: "M. D’Alessio e A. Sgarra" },
-            { title: '2019 – CINEMUSIC', courses: "Moderno 2", choreographer: "Matteo D’Alessio" },
-            { title: '2020 – CE LA FAREMO', courses: "Contemporaneo 2 e 3", choreographer: "Rozenn Corbell" },
-            { title: '2021 – THE BLUES BROTHERS', courses: "Moderno 3", choreographer: "Matteo D’Alessio" },
-            { title: '2022 – FANTASTICO', courses: "Moderno 1 e 3", choreographer: "Matteo D’Alessio" },
-            { title: '2023 – CATS', courses: "Moderno 3", choreographer: "Matteo D’Alessio" },
-            { title: '2024 – GREASE', courses: "Moderno 2", choreographer: "Matteo D’Alessio" },
-            { title: '2025 – CHICAGO', courses: "Moderno 2 e 3", choreographer: "Matteo D’Alessio" },
-            { title: '2026 – IL PRIMO PASSO', courses: "Vari Corsi", choreographer: "M. Casalino, M. D'Alessio, A. Sgarra" },
+            { title: '1) 2017 - ABBRONZATISSIMA', courses: "Corso Gioco danza", choreographer: "Coreografia di Danila Valentini" },
+            { title: '2) 2018 – ANNI 90', courses: "Corsi moderno 1 – Hip Hop 2 e 3", choreographer: "Coreografie di Matteo D’Alessio e Andrea Sgarra" },
+            { title: '3) 2019 – CINEMUSIC', courses: "Corso Moderno 2", choreographer: "Coreografia di Matteo D’Alessio" },
+            { title: '4) 2020 – CE LA FAREMO/ANDRA’ TUTTO BEBE', courses: "Corsi Contemporaneo 2 e 3", choreographer: "Coreografie di Rozenn Corbell" },
+            { title: '5) 2021 – THE BLUES BROTHERS', courses: "Corso Moderno 3", choreographer: "Coreografia di Matteo D’Alessio" },
+            { title: '6) 2022 - FANTASTICO', courses: "Corsi moderno 1 e 3", choreographer: "Coreografie di Matteo D’Alessio" },
+            { title: '7) 2023 - CATS', courses: "Corso Moderno 3", choreographer: "Coreografia di Matteo D’Alessio" },
+            { title: '8) 2024 - GREASE', courses: "Corso Moderno 2", choreographer: "Coreografia di Matteo D’Alessio" },
+            { title: '9) 2025 - CHICAGO', courses: "Corsi moderno 2 e 3", choreographer: "Coreografia di Matteo D’Alessio" },
+            {
+                title: '10) 2026 – IL PRIMO PASSO VERSO UN NUOVO CAPITOLO',
+                courses: "Vari brani",
+                choreographer: "Vari Coreografi",
+                description: "• QUANTO FORTE TI PENSAVO\nCorso Moderno 3\nCoreografia di Manolo Casalino\n\n• SINGING IN THE RAIN\nCorso Burlesque\nCoreografia di Matteo D’Alessio\n\n• QUEEN BAY\nCorsi Hip hop 2 e 3\nCoreografia di Andrea Sgarra"
+            },
         ]
     }
 ];
@@ -57,11 +62,15 @@ const ChoreographyItem = ({ title, courses, choreographer, description }: any) =
                 <div className="flex-1">
                     <h4 className="font-bold text-[#1A1A1A] m-0 text-sm">{title}</h4>
                     <p className="text-[11px] text-gray-500 m-0 uppercase">{courses}</p>
-                    {choreographer && <p className="text-[11px] text-[#c8151b] font-semibold m-0 italic">Coreografia: {choreographer}</p>}
+                    {choreographer && <p className="text-[11px] text-[#c8151b] font-semibold m-0 italic">{choreographer}</p>}
                 </div>
                 {isExpanded ? <ChevronUp size={20} className="text-gray-400" /> : <ChevronDown size={20} className="text-gray-400" />}
             </div>
-            {isExpanded && description && <div className="mt-3 pt-3 border-t border-gray-100 animate-fadeIn"><p className="text-xs text-gray-600 leading-relaxed">{description}</p></div>}
+            {isExpanded && description && (
+                <div className="mt-3 pt-3 border-t border-gray-100 animate-fadeIn whitespace-pre-wrap">
+                    <p className="text-xs text-gray-600 leading-relaxed">{description}</p>
+                </div>
+            )}
         </div>
     );
 };
@@ -100,7 +109,7 @@ export default function App() {
                 @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
             `}</style>
 
-            {/* SIPARIO (Solo Home) */}
+            {/* SIPARIO */}
             {!animationFinished && currentPage === 1 && (
                 <div className="fixed inset-0 z-[100] pointer-events-none flex overflow-hidden">
                     <div className={`w-1/2 h-full transition-transform duration-[2500ms] ease-in-out z-[101] ${curtainsOpen ? '-translate-x-full' : 'translate-x-0'}`}>
@@ -148,15 +157,15 @@ export default function App() {
                             <p className="italic">È con grande gioia che vi accogliamo al nostro saggio di fine anno: una celebrazione di ogni singolo passo compiuto dalle nostre allieve – dalle più piccole alle più grandi.</p>
                             <p className="italic">Quello che vedrete sul palco è il risultato di mesi di impegno, disciplina, emozioni condivise.</p>
                             <p className="italic">Quando si danza, si cresce. Si scopre sé stessi, si trova il coraggio di brillare davanti agli altri.</p>
-                            <p className="font-bold pt-4 text-gray-900">Grazie per essere qui. Buono spettacolo!</p>
+                            <p className="font-bold pt-4 text-gray-900 text-lg">Grazie per essere qui. Buono spettacolo!</p>
                         </div>
                         <div className="py-10 border-y border-gray-200">
-                            <h2 className="text-[#c8151b] text-2xl font-bold mb-6 uppercase tracking-wider">Dediche</h2>
+                            <h2 className="text-[#c8151b] text-2xl font-bold mb-6 uppercase tracking-wider text-red-600">Dediche</h2>
                             <div className="space-y-6 italic text-gray-600 text-lg">
                                 <p>"A chi ha creduto in sé stesso per la prima volta."</p>
                                 <p>"A chi ha scelto di brillare, nonostante la fatica."</p>
                                 <p>"A chi ha danzato con il cuore e con l'anima."</p>
-                                <p className="font-bold text-[#c8151b] text-xl mt-8 not-italic">Questo saggio è per voi.</p>
+                                <p className="font-bold text-red-600 text-xl mt-8 not-italic">Questo saggio è per voi.</p>
                             </div>
                         </div>
                         <div className="pt-4">
@@ -168,13 +177,18 @@ export default function App() {
 
                 {/* PAGE 2 - INFO */}
                 {currentPage === 2 && (
-                    <div className="animate-fadeIn space-y-8 text-left">
-                        <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 leading-relaxed text-center">
+                    <div className="animate-fadeIn space-y-8">
+                        {/* DESCRIZIONE RICHIESTA SENZA CONTENITORE */}
+                        <div className="leading-relaxed text-center px-2">
                             <p className="text-gray-800 text-base m-0">
-                                <span className="font-bold">Dieci anni dopo il primo passo</span> è un viaggio tra ricordi, sogni, paure e traguardi che hanno segnato il cammino della nostra scuola. A guidare questo racconto sono Insicurezza, Coraggio e Ambizione: tre voci che accompagnano il pubblico attraverso dieci anni di crescita, emozioni e passione, celebrando non solo le persone che hanno reso possibile questa storia, ma anche tutti quei momenti indimenticabili che hanno lasciato un segno nel cuore della nostra scuola.
+                                <span className="font-bold">Dieci anni dopo il primo passo</span><br />
+                                è un viaggio tra ricordi, sogni, paure e traguardi che hanno segnato il cammino della nostra scuola. A guidare questo racconto sono Insicurezza, Coraggio e Ambizione: tre voci che accompagnano il pubblico attraverso dieci anni di crescita, emozioni e passione, celebrando non solo le persone che hanno reso possibile questa storia, ma anche tutti quei momenti indimenticabili che hanno lasciato un segno nel cuore della nostra scuola.
                             </p>
                         </div>
+
                         <img src="/locandina.jpeg" className="w-full rounded-2xl shadow-xl border-4 border-white mb-8" alt="Locandina" />
+
+                        {/* TEATRO MODIFICATO */}
                         <div className="bg-white p-6 rounded-2xl shadow-md border border-gray-100">
                             <div className="flex items-start gap-4 mb-8">
                                 <MapPin size={32} className="text-[#c8151b] shrink-0 mt-1" />
@@ -184,7 +198,7 @@ export default function App() {
                                 </div>
                             </div>
                             <div className="flex flex-col gap-3">
-                                <button onClick={() => window.open('https://maps.google.com/?q=Teatro+San+Raffaele+Roma')} className="bg-[#c8151b] text-white py-3 rounded-xl font-bold border-none cursor-pointer active:scale-95 transition-all text-center">Apri in Google Maps</button>
+                                <button onClick={() => window.open('https://maps.google.com/?q=Teatro+San+Raffaele+Roma')} className="bg-[#c8151b] text-white py-3 rounded-xl font-bold border-none cursor-pointer active:scale-95 transition-all text-center">👉 Apri in Google Maps</button>
                                 <button onClick={() => window.open('https://www.teatrosanraffaele.it/')} className="border border-gray-300 py-3 rounded-xl font-bold text-gray-700 bg-white cursor-pointer active:scale-95 transition-all text-center">Sito Ufficiale Teatro</button>
                             </div>
                         </div>
@@ -199,8 +213,8 @@ export default function App() {
                             <div key={section.id}>
                                 <h2 className="text-xl font-bold text-[#c8151b] m-0 uppercase">{section.title}</h2>
                                 <p className="text-lg font-semibold text-gray-800 mb-6">{section.subtitle}</p>
-                                <img src={section.image} className="w-full rounded-xl shadow-md mb-6 aspect-video object-cover" />
-                                <div className="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 text-sm mb-6 leading-relaxed text-left">{section.description}</div>
+                                <img src={section.image} className="w-full rounded-xl shadow-md mb-6 aspect-video object-cover" alt="" />
+                                <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-sm mb-6 leading-relaxed text-left whitespace-pre-wrap text-gray-600">{section.description}</div>
                                 <div className="space-y-3">
                                     {section.choreographies.map((ch, idx) => (<ChoreographyItem key={idx} {...ch} />))}
                                 </div>
@@ -220,7 +234,7 @@ export default function App() {
                             </div>
                             <button onClick={() => window.open('https://maps.google.com/?q=Via+Mare+di+Bering+42,+Ostia')} className="w-full bg-white p-5 rounded-xl shadow-md border-none cursor-pointer active:scale-95 transition-all text-left">
                                 <p className="text-base text-gray-800 m-0 font-semibold">Via Mare di Bering 42, Ostia</p>
-                                <p className="text-[#c8151b] font-bold text-sm mt-2 flex items-center gap-1">Apri in Google Maps <ExternalLink size={14} /></p>
+                                <p className="text-[#c8151b] font-bold text-sm mt-2 flex items-center gap-1">👉 Apri in Google Maps <ExternalLink size={14} /></p>
                             </button>
                         </div>
 
@@ -259,7 +273,7 @@ export default function App() {
                             </button>
                         </div>
 
-                        {/* SEZIONE STAFF INTEGRATA */}
+                        {/* SEZIONE STAFF */}
                         <div className="section pb-10">
                             <div className="flex items-center gap-3 mb-6 text-[#c8151b]">
                                 <Users size={32} /> <h3 className="text-xl font-bold m-0 text-gray-900 uppercase tracking-widest">Staff</h3>
