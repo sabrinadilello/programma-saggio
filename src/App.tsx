@@ -329,8 +329,8 @@ export default function App() {
                                     { n: "GIORGIA MACRINO", r: "Insegnante corsi di recitazione" },
                                     { n: "PAMELA FADDA", r: "Insegnante corsi di canto" },
                                     { n: "ANDREA SGARRA", r: "Insegnante corsi di hip hop" },
-                                    { n: "DANILA VALENTINI", r: "Insegnante corsi di gioco danza" },
-                                    { n: "DONATELLA PACE", r: "Assistente e collaboratrice amministrativa" },
+                                    { n: "DANILA VALENTINI", r: "Insegnante corso di gioco danza e propedeutico" },
+                                    { n: "DONATELLA PANE", r: "Assistente e collaboratrice amministrativa" },
                                     { n: "MATTEO D’ALESSIO", r: "Direttore artistico e insegnante corsi di danza" }
                                 ].map((m, i) => (
                                     <div key={i} className="bg-white p-5 rounded-xl shadow-sm border border-gray-100">
