@@ -57,11 +57,11 @@ const ChoreographyItem = ({ title, courses, choreographer, description }: any) =
         <div>
             <h4 className="font-bold text-[#1A1A1A] m-0 text-sm">{title}</h4>
             <p className="text-[10px] text-gray-500 m-0 uppercase font-semibold tracking-wider mt-1">{courses}</p>
-            {choreographer && <p className="text-[11px] text-[#c8151b] font-bold m-0 mt-1">{choreographer}</p>}
+            {choreographer && <p className="text-[11px] text-[#c8151b] font-bold m-0 mt-1 italic">{choreographer}</p>}
         </div>
         {description && (
             <div className="mt-3 pt-3 border-t border-gray-100 whitespace-pre-wrap">
-                <p className="text-[12px] text-gray-600 leading-relaxed m-0">{description}</p>
+                <p className="text-[12px] text-gray-600 leading-relaxed m-0 italic font-medium">{description}</p>
             </div>
         )}
     </div>
@@ -94,9 +94,9 @@ export default function App() {
     return (
         <div className="min-h-screen bg-[#F8F8F8] text-[#1A1A1A] pb-24 overflow-x-hidden">
             <style>{`
-                @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+                /* Import aggiornato con supporto completo per Italic in tutti i pesi */
+                @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300..800;1,300..800&display=swap');
                 
-                /* Applichiamo Montserrat a tutto */
                 * {
                     font-family: 'Montserrat', sans-serif !important;
                 }
@@ -154,12 +154,12 @@ export default function App() {
                     <div className="animate-fadeIn space-y-10">
                         <img src="/logo.png" className="w-full h-auto mb-8" alt="Logo" />
                         <div className="space-y-6 text-gray-700 leading-relaxed text-sm font-medium">
-                            <p>Ci sono momenti che si attendono a lungo.</p>
-                            <p>Momenti in cui il cuore batte più forte, le luci si abbassano, il silenzio avvolge la sala… e poi tutto inizia.</p>
+                            <p className="italic">Ci sono momenti che si attendono a lungo.</p>
+                            <p className="italic">Momenti in cui il cuore batte più forte, le luci si abbassano, il silenzio avvolge la sala… e poi tutto inizia.</p>
                             <p className="font-bold text-gray-900 text-base uppercase tracking-tight">Questa sera è uno di quei momenti.</p>
-                            <p>È con grande gioia che vi accogliamo al nostro saggio di fine anno: una celebrazione di ogni singolo passo compiuto dalle nostre allieve – dalle più piccole alle più grandi.</p>
-                            <p>Quello che vedrete sul palco è il risultato di mesi di impegno, disciplina, emozioni condivise.</p>
-                            <p>Quando si danza, si cresce. Si scopre sé stessi, si trova il coraggio di brillare davanti agli altri.</p>
+                            <p className="italic">È con grande gioia che vi accogliamo al nostro saggio di fine anno: una celebrazione di ogni singolo passo compiuto dalle nostre allieve – dalle più piccole alle più grandi.</p>
+                            <p className="italic">Quello che vedrete sul palco è il risultato di mesi di impegno, disciplina, emozioni condivise.</p>
+                            <p className="italic">Quando si danza, si cresce. Si scopre sé stessi, si trova il coraggio di brillare davanti agli altri.</p>
                             <p className="font-extrabold pt-4 text-[#c8151b] text-base uppercase">Grazie per essere qui. <br /> Buono spettacolo!</p>
                         </div>
                         <div className="py-10 border-y border-gray-200">
@@ -168,11 +168,11 @@ export default function App() {
                                 <p>"A chi ha creduto in sé stesso per la prima volta."</p>
                                 <p>"A chi ha scelto di brillare, nonostante la fatica."</p>
                                 <p>"A chi ha danzato con il cuore e con l'anima."</p>
-                                <p className="font-black text-[#c8151b] text-lg mt-8 not-italic uppercase tracking-tighter">Questo saggio è per voi.</p>
+                                <p className="font-black text-[#c8151b] text-lg mt-8 italic tracking-tighter uppercase">Questo saggio è per voi.</p>
                             </div>
                         </div>
                         <div className="pt-4">
-                            <p className="font-extrabold text-xl m-0 text-gray-900 uppercase tracking-tight">Matteo D'Alessio</p>
+                            <p className="font-extrabold italic text-xl m-0 text-gray-900 tracking-tight">Matteo D'Alessio</p>
                             <p className="text-gray-400 text-[10px] uppercase tracking-[0.2em] mt-1 font-bold">Direzione Artistica – Centro Studi Arti Sceniche</p>
                         </div>
                     </div>
@@ -183,12 +183,14 @@ export default function App() {
                     <div className="animate-fadeIn space-y-8">
                         <div className="leading-relaxed text-center px-2">
                             <div className="text-gray-800 text-sm m-0 font-medium">
-                                <p className="font-bold text-lg uppercase tracking-tight">Dieci anni dopo il primo passo</p>
+                                <p className="font-bold italic text-lg uppercase tracking-tight">Dieci anni dopo il primo passo</p>
                                 <br />
-                                <p>è un viaggio tra ricordi, sogni, paure e traguardi che hanno segnato il cammino della nostra scuola.</p>
+                                <p className="italic">è un viaggio tra ricordi, sogni, paure e traguardi che hanno segnato il cammino della nostra scuola.</p>
                                 <br />
                                 <p>A guidare questo racconto sono <br />
-                                    <strong className="text-[#c8151b] uppercase">Insicurezza, Coraggio e Ambizione:</strong> <br />tre voci che accompagnano il pubblico attraverso dieci anni di crescita, emozioni e passione.</p>
+                                    <strong className="text-[#c8151b] italic font-black uppercase">Insicurezza, Coraggio e Ambizione:</strong> <br />
+                                    <span className="italic font-semibold text-gray-600">tre voci che accompagnano il pubblico attraverso dieci anni di crescita, emozioni e passione.</span>
+                                </p>
                             </div>
                         </div>
                         <img src="/locandina.jpeg" className="w-full rounded-2xl shadow-xl border-4 border-white mb-8" alt="Locandina" />
@@ -197,7 +199,7 @@ export default function App() {
                                 <MapPin size={28} className="text-[#c8151b] shrink-0 mt-1" />
                                 <div className="flex-1 text-left">
                                     <h3 className="text-base font-bold text-gray-900 m-0 uppercase tracking-tight">Teatro San Raffaele</h3>
-                                    <p className="text-gray-500 text-xs mt-1 font-medium">Via di S. Raffaele, 6, 00148 Roma RM</p>
+                                    <p className="text-gray-500 text-xs mt-1 font-medium italic">Via di S. Raffaele, 6, 00148 Roma RM</p>
                                 </div>
                             </div>
                             <div className="flex flex-col gap-3">
@@ -211,15 +213,19 @@ export default function App() {
                 {/* PAGE 3 - PROGRAMMA */}
                 {currentPage === 3 && (
                     <div className="animate-fadeIn space-y-12">
-                        <h2 className="text-xl font-black text-gray-900 uppercase tracking-[0.2em] mb-8">Programma</h2>
+                        {/* TITOLO PIU GRANDE (text-3xl) */}
+                        <h2 className="text-3xl font-black text-gray-900 uppercase tracking-[0.2em] mb-8">Programma</h2>
                         {PROGRAMMA_DATA.map((section) => (
                             <div key={section.id} className="pb-10 border-b border-gray-200 last:border-0">
                                 <h2 className="text-lg font-black text-[#c8151b] m-0 uppercase tracking-tighter">{section.title}</h2>
-                                <p className="text-sm font-bold text-gray-800 mb-6 uppercase tracking-tight">{section.subtitle}</p>
+                                <p className="text-sm font-bold text-gray-800 mb-6 uppercase tracking-tight italic">{section.subtitle}</p>
                                 <img src={section.image} className="w-full rounded-xl shadow-md mb-6 aspect-video object-cover" alt="" />
-                                <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-xs mb-8 leading-relaxed text-left whitespace-pre-wrap text-gray-600 font-medium italic">
+
+                                {/* DESCRIZIONE PIU GRANDE (text-base) E CORSIVA */}
+                                <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-base mb-8 leading-relaxed text-left whitespace-pre-wrap text-gray-600 font-medium italic">
                                     {section.description}
                                 </div>
+
                                 <div className="space-y-4">
                                     {section.choreographies.map((ch, idx) => (<ChoreographyItem key={idx} {...ch} />))}
                                 </div>
@@ -228,7 +234,7 @@ export default function App() {
                         <div className="mt-12 animate-fadeIn">
                             <Heart size={32} className="text-[#c8151b] mx-auto mb-3" />
                             <h3 className="text-lg font-black text-[#c8151b] mb-4 uppercase tracking-widest">Ringraziamenti</h3>
-                            <div className="bg-white p-8 rounded-2xl shadow-md border-2 border-[#D4AF37] text-xs font-semibold text-gray-700 leading-relaxed uppercase tracking-tight">
+                            <div className="bg-white p-8 rounded-2xl shadow-md border-2 border-[#D4AF37] text-xs font-semibold text-gray-700 leading-relaxed uppercase tracking-tight italic">
                                 Grazie a tutte le allieve, alle famiglie e a chi ha collaborato dietro le quinte per rendere possibili questi dieci anni di magia.
                             </div>
                         </div>
@@ -245,7 +251,7 @@ export default function App() {
                                 <MapPin size={28} /> <h3 className="text-lg font-black m-0 text-gray-900 uppercase tracking-tight">Dove siamo</h3>
                             </div>
                             <button onClick={() => window.open('https://maps.google.com/?q=Via+Mare+di+Bering+42,+Ostia')} className="w-full bg-white p-5 rounded-xl shadow-md border-none cursor-pointer active:scale-95 transition-all text-left">
-                                <p className="text-sm text-gray-800 m-0 font-bold uppercase tracking-tighter">Via Mare di Bering 42, Ostia</p>
+                                <p className="text-sm text-gray-800 m-0 font-bold uppercase tracking-tighter italic">Via Mare di Bering 42, Ostia</p>
                                 <p className="text-[#c8151b] font-bold text-[10px] mt-2 flex items-center gap-1 uppercase tracking-widest">Apri in Google Maps <ExternalLink size={12} /></p>
                             </button>
                         </div>
@@ -260,32 +266,8 @@ export default function App() {
                             </button>
                             <button onClick={() => window.open('mailto:info@centrostudiartisceniche.it')} className="w-full bg-white p-5 rounded-xl shadow-md border-none cursor-pointer text-left">
                                 <p className="text-[9px] font-black text-gray-400 uppercase mb-1 tracking-widest">Email:</p>
-                                <p className="text-xs text-gray-800 m-0 font-bold truncate">info@centrostudiartisceniche.it</p>
+                                <p className="text-xs text-gray-800 m-0 font-bold truncate italic">info@centrostudiartisceniche.it</p>
                             </button>
-                        </div>
-
-                        <div className="section">
-                            <div className="flex items-center gap-3 mb-4 text-[#c8151b]">
-                                <Globe size={28} /> <h3 className="text-lg font-black m-0 text-gray-900 uppercase tracking-tight">Online</h3>
-                            </div>
-                            <div className="space-y-3">
-                                <button onClick={() => window.open('https://www.centrostudiartisceniche.it')} className="w-full bg-white p-5 rounded-xl shadow-md border-none flex items-center gap-4 cursor-pointer text-left">
-                                    <Globe size={18} className="text-gray-400" />
-                                    <div className="flex-1">
-                                        <p className="text-[9px] font-black text-gray-400 uppercase tracking-widest mb-1">Sito Web:</p>
-                                        <p className="text-xs text-gray-800 m-0 font-bold">www.centrostudiartisceniche.it</p>
-                                    </div>
-                                    <ExternalLink size={14} className="text-[#c8151b]" />
-                                </button>
-                                <button onClick={() => window.open('https://instagram.com/centrostudiartisceniche')} className="w-full bg-white p-5 rounded-xl shadow-md border-none flex items-center gap-4 cursor-pointer text-left">
-                                    <Instagram size={18} className="text-gray-400" />
-                                    <div className="flex-1">
-                                        <p className="text-[9px] font-black text-gray-400 uppercase tracking-widest mb-1">Instagram:</p>
-                                        <p className="text-xs text-gray-800 m-0 font-bold">@centrostudiartisceniche</p>
-                                    </div>
-                                    <ExternalLink size={14} className="text-[#c8151b]" />
-                                </button>
-                            </div>
                         </div>
 
                         <div className="section pb-10">
@@ -304,7 +286,7 @@ export default function App() {
                                 ].map((m, i) => (
                                     <div key={i} className="bg-white p-5 rounded-xl shadow-sm border border-gray-100">
                                         <p className="font-extrabold text-gray-900 m-0 text-xs uppercase tracking-tight">{m.n}</p>
-                                        <p className="text-[10px] text-gray-400 m-0 mt-1 font-bold italic">{m.r}</p>
+                                        <p className="text-[10px] text-gray-400 m-0 mt-1 font-bold italic uppercase tracking-tighter">{m.r}</p>
                                     </div>
                                 ))}
                             </div>
