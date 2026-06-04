@@ -52,16 +52,26 @@ const PROGRAMMA_DATA = [
     }
 ];
 
+// --- COMPONENTE AGGIORNATO CON CARATTERI PIU GRANDI ---
 const ChoreographyItem = ({ title, courses, choreographer, description }: any) => (
-    <div className="bg-white p-5 rounded-xl shadow-sm border-l-4 border-[#D4AF37] mb-5 text-left">
+    <div className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-[#D4AF37] mb-6 text-left">
         <div>
-            <h4 className="font-bold text-[#1A1A1A] m-0 text-sm">{title}</h4>
-            <p className="text-[10px] text-gray-500 m-0 uppercase font-semibold tracking-wider mt-1">{courses}</p>
-            {choreographer && <p className="text-[11px] text-[#c8151b] font-bold m-0 mt-1 italic">{choreographer}</p>}
+            {/* Titolo più grande e marcato */}
+            <h4 className="font-extrabold text-[#1A1A1A] m-0 text-lg uppercase tracking-tight">{title}</h4>
+
+            {/* Corsi più grandi e leggibili */}
+            <p className="text-xs text-gray-500 m-0 uppercase font-bold tracking-widest mt-2">{courses}</p>
+
+            {/* Coreografo più grande e colorato */}
+            {choreographer && (
+                <p className="text-sm text-[#c8151b] font-extrabold m-0 mt-2 italic tracking-tight">
+                    {choreographer}
+                </p>
+            )}
         </div>
         {description && (
-            <div className="mt-3 pt-3 border-t border-gray-100 whitespace-pre-wrap">
-                <p className="text-[12px] text-gray-600 leading-relaxed m-0 italic font-medium">{description}</p>
+            <div className="mt-4 pt-4 border-t border-gray-100 whitespace-pre-wrap">
+                <p className="text-sm text-gray-600 leading-relaxed m-0 italic font-medium">{description}</p>
             </div>
         )}
     </div>
@@ -152,26 +162,26 @@ export default function App() {
                 {currentPage === 1 && (
                     <div className="animate-fadeIn space-y-10">
                         <img src="/logo.png" className="w-full h-auto mb-8" alt="Logo" />
-                        <div className="space-y-6 text-gray-700 leading-relaxed text-sm font-medium">
+                        <div className="space-y-6 text-gray-700 leading-relaxed text-base font-medium">
                             <p className="italic">Ci sono momenti che si attendono a lungo.</p>
                             <p className="italic">Momenti in cui il cuore batte più forte, le luci si abbassano, il silenzio avvolge la sala… e poi tutto inizia.</p>
-                            <p className="font-bold text-gray-900 text-base uppercase tracking-tight">Questa sera è uno di quei momenti.</p>
+                            <p className="font-bold text-gray-900 text-lg uppercase tracking-tight">Questa sera è uno di quei momenti.</p>
                             <p className="italic">È con grande gioia che vi accogliamo al nostro saggio di fine anno: una celebrazione di ogni singolo passo compiuto dalle nostre allieve – dalle più piccole alle più grandi.</p>
                             <p className="italic">Quello che vedrete sul palco è il risultato di mesi di impegno, disciplina, emozioni condivise.</p>
                             <p className="italic">Quando si danza, si cresce. Si scopre sé stessi, si trova il coraggio di brillare davanti agli altri.</p>
-                            <p className="font-extrabold pt-4 text-[#c8151b] text-base uppercase italic">Grazie per essere qui. <br /> Buono spettacolo!</p>
+                            <p className="font-extrabold pt-4 text-[#c8151b] text-lg uppercase italic">Grazie per essere qui. <br /> Buono spettacolo!</p>
                         </div>
                         <div className="py-10 border-y border-gray-200">
                             <h2 className="text-[#c8151b] text-xl font-black mb-6 uppercase tracking-widest">Dediche</h2>
-                            <div className="space-y-6 text-gray-600 text-sm font-semibold italic">
+                            <div className="space-y-6 text-gray-600 text-base font-semibold italic">
                                 <p>"A chi ha creduto in sé stesso per la prima volta."</p>
                                 <p>"A chi ha scelto di brillare, nonostante la fatica."</p>
                                 <p>"A chi ha danzato con il cuore e con l'anima."</p>
-                                <p className="font-black text-[#c8151b] text-lg mt-8 italic uppercase tracking-tighter">Questo saggio è per voi.</p>
+                                <p className="font-black text-[#c8151b] text-xl mt-8 italic uppercase tracking-tighter">Questo saggio è per voi.</p>
                             </div>
                         </div>
                         <div className="pt-4">
-                            <p className="font-extrabold italic text-xl m-0 text-gray-900 tracking-tight">Matteo D'Alessio</p>
+                            <p className="font-extrabold italic text-2xl m-0 text-gray-900 tracking-tight">Matteo D'Alessio</p>
                             <p className="text-gray-400 text-[10px] uppercase tracking-[0.2em] mt-1 font-bold">Direzione Artistica – Centro Studi Arti Sceniche</p>
                         </div>
                     </div>
@@ -181,8 +191,8 @@ export default function App() {
                 {currentPage === 2 && (
                     <div className="animate-fadeIn space-y-8">
                         <div className="leading-relaxed text-center px-2">
-                            <div className="text-gray-800 text-sm m-0 font-medium">
-                                <p className="font-bold italic text-lg uppercase tracking-tight">Dieci anni dopo il primo passo</p>
+                            <div className="text-gray-800 text-base m-0 font-medium">
+                                <p className="font-bold italic text-xl uppercase tracking-tight">Dieci anni dopo il primo passo</p>
                                 <br />
                                 <p className="italic">è un viaggio tra ricordi, sogni, paure e traguardi che hanno segnato il cammino della nostra scuola.</p>
                                 <br />
@@ -215,8 +225,8 @@ export default function App() {
                         <h2 className="text-3xl font-black text-gray-900 uppercase tracking-[0.2em] mb-8">Programma</h2>
                         {PROGRAMMA_DATA.map((section) => (
                             <div key={section.id} className="pb-10 border-b border-gray-200 last:border-0">
-                                <h2 className="text-lg font-black text-[#c8151b] m-0 uppercase tracking-tighter">{section.title}</h2>
-                                <p className="text-sm font-bold text-gray-800 mb-6 uppercase tracking-tight italic">{section.subtitle}</p>
+                                <h2 className="text-xl font-black text-[#c8151b] m-0 uppercase tracking-tighter">{section.title}</h2>
+                                <p className="text-base font-bold text-gray-800 mb-6 uppercase tracking-tight italic">{section.subtitle}</p>
                                 <img src={section.image} className="w-full rounded-xl shadow-md mb-6 aspect-video object-cover" alt="" />
                                 <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-base mb-8 leading-relaxed text-left whitespace-pre-wrap text-gray-600 font-medium italic">
                                     {section.description}
@@ -229,7 +239,7 @@ export default function App() {
                         <div className="mt-12 animate-fadeIn">
                             <Heart size={32} className="text-[#c8151b] mx-auto mb-3" />
                             <h3 className="text-lg font-black text-[#c8151b] mb-4 uppercase tracking-widest">Ringraziamenti</h3>
-                            <div className="bg-white p-8 rounded-2xl shadow-md border-2 border-[#D4AF37] text-xs font-semibold text-gray-700 leading-relaxed uppercase tracking-tight italic">
+                            <div className="bg-white p-8 rounded-2xl shadow-md border-2 border-[#D4AF37] text-sm font-semibold text-gray-700 leading-relaxed uppercase tracking-tight italic">
                                 Grazie a tutte le allieve, alle famiglie e a chi ha collaborato dietro le quinte per rendere possibili questi dieci anni di magia.
                             </div>
                         </div>
