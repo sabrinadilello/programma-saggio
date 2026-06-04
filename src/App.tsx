@@ -46,8 +46,6 @@ const PROGRAMMA_DATA = [
             { title: '9) 2025 - CHICAGO', courses: "Corsi moderno 2 e 3", choreographer: "Coreografia di Matteo D’Alessio" },
             {
                 title: '10) 2026 – IL PRIMO PASSO VERSO UN NUOVO CAPITOLO',
-                courses: "Vari brani",
-                choreographer: "Vari Coreografi",
                 description: "• QUANTO FORTE TI PENSAVO\nCorso Moderno 3\nCoreografia di Manolo Casalino\n\n• SINGING IN THE RAIN\nCorso Burlesque\nCoreografia di Matteo D’Alessio\n\n• QUEEN BAY\nCorsi Hip hop 2 e 3\nCoreografia di Andrea Sgarra"
             },
         ]
@@ -132,7 +130,6 @@ export default function App() {
                 {currentPage === 2 ? (
                     <div className="animate-fadeIn">
                         <h1 className="text-2xl font-bold uppercase tracking-widest m-0 italic">Saggio 2026</h1>
-                        <p className="text-sm opacity-80 mt-1">Dieci anni dopo il primo passo</p>
                     </div>
                 ) : (
                     <div className="h-8" />
