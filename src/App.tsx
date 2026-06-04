@@ -178,7 +178,7 @@ export default function App() {
                             <p className="italic">Ci sono momenti che si attendono a lungo.</p>
                             <p className="italic">Momenti in cui il cuore batte più forte, le luci si abbassano, il silenzio avvolge la sala… e poi tutto inizia.</p>
                             <p className="font-bold text-gray-900 text-lg uppercase tracking-tight">Questa sera è uno di quei momenti.</p>
-                            <p className="italic">È con grande gioia che vi accogliamo al nostro saggio di fine anno: una celebrazione di ogni singolo passo compiuto dalle nostre allieve – dalle più piccole alle più grandi.</p>
+                            <p className="italic">È con grande gioia che vi accogliamo al nostro saggio di fine anno: una celebrazione di ogni singolo passo compiuto dalle nostre allieve ed allievi– dai più piccoli ai più grandi.</p>
                             <p className="italic">Quello che vedrete sul palco è il risultato di mesi di impegno, disciplina, emozioni condivise.</p>
                             <p className="italic">Quando si danza, si cresce. Si scopre sé stessi, si trova il coraggio di brillare davanti agli altri.</p>
                             <p className="font-medium pt-4 text-[#c8151b] text-lg uppercase">Grazie per essere qui. <br /> Buono spettacolo!</p>
