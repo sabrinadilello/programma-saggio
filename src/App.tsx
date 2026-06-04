@@ -175,8 +175,9 @@ export default function App() {
                                 <span className="font-bold italic">Dieci anni dopo il primo passo</span>
                                 <br /><br />
                                 è un viaggio tra ricordi, sogni, paure e traguardi che hanno segnato il cammino della nostra scuola.
-                                <br /><br />
-                                A guidare questo racconto sono Insicurezza, Coraggio e Ambizione: tre voci che accompagnano il pubblico attraverso dieci anni di crescita, emozioni e passione, celebrando non solo le persone che hanno reso possibile questa storia, ma anche tutti quei momenti indimenticabili che hanno lasciato un segno nel cuore della nostra scuola.
+                                <br />
+                                A guidare questo racconto sono <br />
+                                Insicurezza, Coraggio e Ambizione: tre voci che accompagnano il pubblico attraverso dieci anni di crescita, emozioni e passione, celebrando non solo le persone che hanno reso possibile questa storia, ma anche tutti quei momenti indimenticabili che hanno lasciato un segno nel cuore della nostra scuola.
                             </p>
                         </div>
                         <img src="/locandina.jpeg" className="w-full rounded-2xl shadow-xl border-4 border-white mb-8" alt="Locandina" />
