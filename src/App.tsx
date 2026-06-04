@@ -95,8 +95,13 @@ export default function App() {
     return (
         <div className="min-h-screen bg-[#F8F8F8] text-[#1A1A1A] pb-24 font-sans overflow-x-hidden">
             <style>{`
-                @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-                body { font-family: 'Inter', sans-serif; margin: 0; background-color: #F8F8F8; }
+                @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;600;700&display=swap');
+                body { 
+                    font-family: 'Cormorant Garamond', serif; 
+                    margin: 0; 
+                    background-color: #F8F8F8; 
+                    -webkit-font-smoothing: antialiased;
+                }
                 .header-gradient { background: linear-gradient(to bottom, #1A1A1A 0%, #c8151b 100%); }
                 .animate-fadeIn { animation: fadeIn 0.6s ease-out forwards; }
                 @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
