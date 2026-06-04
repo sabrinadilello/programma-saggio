@@ -2,35 +2,13 @@ import { useState, useEffect, SVGProps } from 'react';
 import { MapPin, Info, Home, BookOpen, Users, Globe, ChevronDown, ChevronUp, Heart, Phone, Mail, Camera, Share2, ExternalLink, Clock } from 'lucide-react';
 
 const Facebook = ({ size = 24, ...props }: SVGProps<SVGSVGElement> & { size?: number | string }) => (
-    <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width={size}
-        height={size}
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        {...props}
-    >
+    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
         <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
     </svg>
 );
 
 const Instagram = ({ size = 24, ...props }: SVGProps<SVGSVGElement> & { size?: number | string }) => (
-    <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width={size}
-        height={size}
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        {...props}
-    >
+    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
         <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
         <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
         <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
@@ -107,9 +85,10 @@ export default function App() {
 
     const navItems = [
         { page: 1, Icon: Home, label: 'Home' },
-        { page: 2, Icon: BookOpen, label: 'Programma' },
-        { page: 3, Icon: Users, label: 'Staff' },
-        { page: 4, Icon: Phone, label: 'Contatti' },
+        { page: 2, Icon: Info, label: 'Info' },
+        { page: 3, Icon: BookOpen, label: 'Programma' },
+        { page: 4, Icon: Users, label: 'Staff' },
+        { page: 5, Icon: Phone, label: 'Contatti' },
     ];
 
     return (
@@ -147,10 +126,7 @@ export default function App() {
             </nav>
 
             <header className="header-gradient text-white pt-12 pb-8 px-6 text-center shadow-md">
-                {currentPage === 4 ? <Phone size={40} className="mx-auto text-[#D4AF37] mb-2" /> : <Info size={40} className="mx-auto text-[#D4AF37] mb-2" />}
-                <h1 className="text-2xl font-bold uppercase tracking-widest m-0 italic">
-                    {currentPage === 4 ? "Contatti e Info" : "Saggio 2026"}
-                </h1>
+                <h1 className="text-2xl font-bold uppercase tracking-widest m-0 italic">Saggio 2026</h1>
                 <p className="text-sm opacity-80 mt-1">Dieci anni dopo il primo passo</p>
             </header>
 
@@ -172,19 +148,42 @@ export default function App() {
                             <div className="space-y-4 italic text-gray-600">
                                 <p>"A chi ha creduto in sé stesso per la prima volta."</p>
                                 <p>"A chi ha scelto di brillare, nonostante la fatica."</p>
+                                <p>"A chi ha danzato con il cuore e con l'anima."</p>
                                 <p className="font-bold text-[#c8151b] text-lg mt-6 not-italic">Questo saggio è per voi.</p>
                             </div>
                         </div>
-                        <div className="pt-4 pb-10">
+                        <div className="pt-4">
                             <p className="font-bold italic text-xl m-0">Matteo D'Alessio</p>
                             <p className="text-gray-400 text-xs uppercase tracking-widest mt-1">Direzione Artistica – Centro Studi Arti Sceniche</p>
                         </div>
-                        <img src="/locandina.jpeg" className="w-full rounded-2xl shadow-xl border-4 border-white" alt="Locandina" />
                     </div>
                 )}
 
-                {/* PAGE 2 - PROGRAMMA */}
+                {/* PAGE 2 - INFO SERATA (NUOVA) */}
                 {currentPage === 2 && (
+                    <div className="animate-fadeIn space-y-8">
+                        <h2 className="text-2xl font-bold text-gray-800 uppercase tracking-wide">Info Serata</h2>
+                        <img src="/locandina.jpeg" className="w-full rounded-2xl shadow-xl border-4 border-white mb-8" alt="Locandina" />
+
+                        <div className="bg-white p-6 rounded-2xl shadow-md space-y-6 text-left">
+                            <div className="flex items-center gap-3 text-[#c8151b]">
+                                <MapPin size={28} />
+                                <h3 className="text-xl font-bold m-0 text-gray-900">Il Teatro</h3>
+                            </div>
+                            <div>
+                                <p className="font-bold text-gray-800 m-0">Teatro San Raffaele</p>
+                                <p className="text-gray-600 text-sm mt-1">Via di S. Raffaele, 6, 00148 Roma RM</p>
+                            </div>
+                            <div className="flex flex-col gap-3">
+                                <button onClick={() => window.open('https://maps.google.com/?q=Teatro+San+Raffaele+Roma')} className="bg-[#c8151b] text-white py-3 rounded-xl font-bold text-center no-underline cursor-pointer">👉 Apri in Google Maps</button>
+                                <button onClick={() => window.open('https://www.teatrosanraffaele.it/')} className="border border-gray-300 py-3 rounded-xl font-bold text-gray-700 text-center cursor-pointer">Sito Ufficiale Teatro</button>
+                            </div>
+                        </div>
+                    </div>
+                )}
+
+                {/* PAGE 3 - PROGRAMMA */}
+                {currentPage === 3 && (
                     <div className="animate-fadeIn space-y-10">
                         {PROGRAMMA_DATA.map((section) => (
                             <div key={section.id}>
@@ -207,8 +206,8 @@ export default function App() {
                     </div>
                 )}
 
-                {/* PAGE 3 - STAFF */}
-                {currentPage === 3 && (
+                {/* PAGE 4 - STAFF */}
+                {currentPage === 4 && (
                     <div className="animate-fadeIn space-y-3">
                         <h2 className="text-2xl font-bold mb-8 text-center text-gray-800">Lo Staff</h2>
                         {[
@@ -228,53 +227,47 @@ export default function App() {
                     </div>
                 )}
 
-                {/* PAGE 4 - CONTATTI (IL TUO LAYOUT ORIGINALE) */}
-                {currentPage === 4 && (
+                {/* PAGE 5 - CONTATTI */}
+                {currentPage === 5 && (
                     <div className="animate-fadeIn space-y-10 text-left">
                         <img src="/staff.jpg" className="w-full rounded-2xl shadow-sm object-contain bg-white p-2" alt="Staff" />
-
-                        {/* DOVE SIAMO */}
                         <div className="section">
                             <div className="flex items-center gap-3 mb-4 text-[#c8151b]">
                                 <MapPin size={32} /> <h3 className="text-xl font-bold m-0 text-gray-900">Dove siamo</h3>
                             </div>
-                            <button onClick={() => window.open('https://maps.google.com/?q=Via+Mare+di+Bering+42,+Ostia')} className="w-full bg-white p-5 rounded-xl shadow-md border-none cursor-pointer active:scale-95 transition-all text-left">
+                            <button onClick={() => window.open('https://maps.google.com/?q=Via+Mare+di+Bering+42,+Ostia')} className="w-full bg-white p-5 rounded-xl shadow-md border-none cursor-pointer text-left">
                                 <p className="text-base text-gray-800 m-0">Via Mare di Bering 42, Ostia</p>
                                 <p className="text-[#c8151b] font-bold text-sm mt-2 flex items-center gap-1">👉 Apri in Google Maps <ExternalLink size={14} /></p>
                             </button>
                         </div>
-
-                        {/* CONTATTI */}
                         <div className="section">
                             <div className="flex items-center gap-3 mb-4 text-[#c8151b]">
                                 <Phone size={32} /> <h3 className="text-xl font-bold m-0 text-gray-900">Contatti</h3>
                             </div>
-                            <button onClick={() => window.open('tel:+393922752576')} className="w-full bg-white p-5 rounded-xl shadow-md border-none mb-3 cursor-pointer active:scale-95 text-left">
+                            <button onClick={() => window.open('tel:+393922752576')} className="w-full bg-white p-5 rounded-xl shadow-md border-none mb-3 cursor-pointer text-left">
                                 <p className="text-xs font-bold text-gray-400 uppercase mb-1">Telefono:</p>
                                 <p className="text-base text-gray-800 m-0 font-semibold">392 2752576</p>
                             </button>
-                            <button onClick={() => window.open('mailto:info@centrostudiartisceniche.it')} className="w-full bg-white p-5 rounded-xl shadow-md border-none cursor-pointer active:scale-95 text-left">
+                            <button onClick={() => window.open('mailto:info@centrostudiartisceniche.it')} className="w-full bg-white p-5 rounded-xl shadow-md border-none cursor-pointer text-left">
                                 <p className="text-xs font-bold text-gray-400 uppercase mb-1">Email:</p>
                                 <p className="text-sm text-gray-800 m-0 font-semibold truncate">info@centrostudiartisceniche.it</p>
                             </button>
                         </div>
-
-                        {/* ONLINE */}
                         <div className="section pb-10">
                             <div className="flex items-center gap-3 mb-4 text-[#c8151b]">
                                 <Globe size={32} /> <h3 className="text-xl font-bold m-0 text-gray-900">Online</h3>
                             </div>
-                            <button onClick={() => window.open('https://www.centrostudiartisceniche.it')} className="w-full bg-white p-5 rounded-xl shadow-md border-none mb-3 flex items-center gap-4 cursor-pointer active:scale-95 text-left">
+                            <button onClick={() => window.open('https://www.centrostudiartisceniche.it')} className="w-full bg-white p-5 rounded-xl shadow-md border-none mb-3 flex items-center gap-4 cursor-pointer text-left">
                                 <Globe size={20} className="text-gray-400" />
                                 <div className="flex-1"><p className="text-xs font-bold text-gray-400 uppercase mb-1">Sito Web:</p><p className="text-sm text-gray-800 m-0">www.centrostudiartisceniche.it</p></div>
                                 <ExternalLink size={16} className="text-[#c8151b]" />
                             </button>
-                            <button onClick={() => window.open('https://instagram.com/centrostudiartisceniche')} className="w-full bg-white p-5 rounded-xl shadow-md border-none mb-3 flex items-center gap-4 cursor-pointer active:scale-95 text-left">
+                            <button onClick={() => window.open('https://instagram.com/centrostudiartisceniche')} className="w-full bg-white p-5 rounded-xl shadow-md border-none mb-3 flex items-center gap-4 cursor-pointer text-left">
                                 <Instagram size={20} className="text-gray-400" />
                                 <div className="flex-1"><p className="text-xs font-bold text-gray-400 uppercase mb-1">Instagram:</p><p className="text-sm text-gray-800 m-0">@centrostudiartisceniche</p></div>
                                 <ExternalLink size={16} className="text-[#c8151b]" />
                             </button>
-                            <button onClick={() => window.open('https://facebook.com/centrostudiartisceniche')} className="w-full bg-white p-5 rounded-xl shadow-md border-none flex items-center gap-4 cursor-pointer active:scale-95 text-left">
+                            <button onClick={() => window.open('https://facebook.com/centrostudiartisceniche')} className="w-full bg-white p-5 rounded-xl shadow-md border-none flex items-center gap-4 cursor-pointer text-left">
                                 <Facebook size={20} className="text-gray-400" />
                                 <div className="flex-1"><p className="text-xs font-bold text-gray-400 uppercase mb-1">Facebook:</p><p className="text-sm text-gray-800 m-0">Centro Studi Arti Sceniche</p></div>
                                 <ExternalLink size={16} className="text-[#c8151b]" />
