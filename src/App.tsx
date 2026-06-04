@@ -87,8 +87,7 @@ export default function App() {
         { page: 1, Icon: Home, label: 'Home' },
         { page: 2, Icon: Info, label: 'Info' },
         { page: 3, Icon: BookOpen, label: 'Programma' },
-        { page: 4, Icon: Users, label: 'Staff' },
-        { page: 5, Icon: Phone, label: 'Contatti' },
+        { page: 4, Icon: Phone, label: 'Contatti' },
     ];
 
     return (
@@ -126,37 +125,48 @@ export default function App() {
             </nav>
 
             <header className="header-gradient text-white pt-12 pb-8 px-6 text-center shadow-md">
-                <h1 className="text-2xl font-bold uppercase tracking-widest m-0 italic">Saggio 2026</h1>
-                <p className="text-sm opacity-80 mt-1">Dieci anni dopo il primo passo</p>
+                {currentPage === 2 ? (
+                    <>
+                        <h1 className="text-2xl font-bold uppercase tracking-widest m-0 italic">Saggio 2026</h1>
+                        <p className="text-sm opacity-80 mt-1">Dieci anni dopo il primo passo</p>
+                    </>
+                ) : (
+                    <div className="h-8" />
+                )}
             </header>
 
             <main className="max-w-md mx-auto p-6 text-center">
 
                 {/* PAGE 1 - HOME */}
                 {currentPage === 1 && (
-                    <div className="animate-fadeIn space-y-12">
-                        {/* Immagine Logo senza contenitore */}
+                    <div className="animate-fadeIn space-y-10">
                         <img src="/logo.png" className="w-full h-auto mb-8" alt="Logo" />
 
-                        <div className="space-y-6 text-gray-700 leading-relaxed text-base italic">
-                            <p>Ci sono momenti che si attendono a lungo.</p>
-                            <p>Momenti in cui il cuore batte più forte, le luci si abbassano...</p>
-                            <p><strong>Questa sera è uno di quei momenti.</strong></p>
-                            <p>È con grande gioia che vi accogliamo al nostro saggio di fine anno.</p>
-                            <p className="font-bold text-[#c8151b] not-italic text-lg pt-4">Grazie per essere qui. Buon spettacolo!</p>
+                        <div className="space-y-6 text-gray-700 leading-relaxed text-base text-center">
+                            <p className="italic">Ci sono momenti che si attendono a lungo.</p>
+                            <p className="italic">Momenti in cui il cuore batte più forte, le luci si abbassano, il silenzio avvolge la sala… e poi tutto inizia.</p>
+                            <p className="font-bold">Questa sera è uno di quei momenti.</p>
+                            <p className="italic">È con grande gioia che vi accogliamo al nostro saggio di fine anno: una celebrazione di ogni singolo passo compiuto dalle nostre allieve – dalle più piccole alle più grandi.</p>
+                            <p className="italic">Quello che vedrete sul palco è il risultato di mesi di impegno, disciplina, emozioni condivise.</p>
+                            <p className="italic">Quando si danza, si cresce. Si scopre sé stessi, si trova il coraggio di brillare davanti agli altri.</p>
+                            <p className="font-bold pt-4">Grazie per essere qui. Buono spettacolo!</p>
                         </div>
+
+                        {/* DEDICHE */}
                         <div className="py-10 border-y border-gray-200">
-                            <h2 className="text-[#c8151b] text-2xl font-bold mb-6">Dediche</h2>
-                            <div className="space-y-4 italic text-gray-600">
+                            <h2 className="text-red-600 text-2xl font-bold mb-6 uppercase tracking-wider">Dediche</h2>
+                            <div className="space-y-6 italic text-gray-600 text-lg">
                                 <p>"A chi ha creduto in sé stesso per la prima volta."</p>
                                 <p>"A chi ha scelto di brillare, nonostante la fatica."</p>
                                 <p>"A chi ha danzato con il cuore e con l'anima."</p>
-                                <p className="font-bold text-[#c8151b] text-lg mt-6 not-italic">Questo saggio è per voi.</p>
+                                <p className="font-bold text-red-600 text-xl mt-8 not-italic">Questo saggio è per voi.</p>
                             </div>
                         </div>
+
+                        {/* FIRMA */}
                         <div className="pt-4">
                             <p className="font-bold italic text-xl m-0">Matteo D'Alessio</p>
-                            <p className="text-gray-400 text-xs uppercase tracking-widest mt-1">Direzione Artistica – Centro Studi Arti Sceniche</p>
+                            <p className="text-gray-500 text-xs uppercase tracking-widest mt-1">Direzione Artistica – Centro Studi Arti Sceniche</p>
                         </div>
                     </div>
                 )}
@@ -201,38 +211,15 @@ export default function App() {
                         <div className="mt-12 animate-fadeIn">
                             <Heart size={32} className="text-[#c8151b] mx-auto mb-3" />
                             <h3 className="text-xl font-bold text-[#c8151b] mb-4">Ringraziamenti</h3>
-                            <div className="bg-white p-6 rounded-2xl shadow-md border-2 border-[#D4AF37] text-sm text-gray-700">
+                            <div className="bg-white p-6 rounded-2xl shadow-md border-2 border-[#D4AF37] text-sm text-gray-700 p-8">
                                 Grazie a tutte le allieve, alle famiglie e a chi ha collaborato dietro le quinte.
                             </div>
                         </div>
                     </div>
                 )}
 
-                {/* PAGE 4 - STAFF */}
+                {/* PAGE 4 - CONTATTI */}
                 {currentPage === 4 && (
-                    <div className="animate-fadeIn space-y-3">
-                        <h2 className="text-2xl font-bold mb-8 text-center text-gray-800">Lo Staff</h2>
-                        {[
-                            { n: "MATTEO D’ALESSIO", r: "Direttore artistico" },
-                            { n: "ROZENN CORBELL", r: "Danza contemporanea" },
-                            { n: "GIORGIA MACRINO", r: "Recitazione e Musical" },
-                            { n: "PAMELA FADDA", r: "Canto" },
-                            { n: "ANDREA SGARRA", r: "Hip Hop" },
-                            { n: "DANILA VALENTINI", r: "Gioco Danza" },
-                            { n: "DONATELLA VERONICA", r: "Amministrazione" }
-                        ].map((m, i) => (
-                            <div key={i} className="bg-white p-5 rounded-xl shadow-sm flex items-center justify-between text-left">
-                                <div>
-                                    <p className="font-bold m-0 text-sm">{m.n}</p>
-                                    <p className="text-[10px] text-gray-400 m-0 uppercase tracking-widest">{m.r}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                )}
-
-                {/* PAGE 5 - CONTATTI */}
-                {currentPage === 5 && (
                     <div className="animate-fadeIn space-y-10 text-left">
                         <img src="/staff.jpg" className="w-full rounded-2xl shadow-sm object-contain bg-white p-2" alt="Staff" />
                         <div className="section">
