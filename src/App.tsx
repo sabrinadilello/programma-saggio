@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { MapPin, Info, Home, BookOpen, Users, Globe, ChevronDown, ChevronUp, Heart, Phone, Mail, Instagram, Facebook, ExternalLink } from 'lucide-react';
+import { MapPin, Info, Home, BookOpen, Users, Globe, ChevronDown, ChevronUp, Heart, Phone, Mail, Camera, Share2, ExternalLink } from 'lucide-react';
 
 // --- DATI PROGRAMMA DI SALA 2026 ---
 const PROGRAMMA_DATA = [
@@ -198,12 +198,12 @@ export default function App() {
                                 <ExternalLink size={16} className="text-[#c8151b]" />
                             </ContactCard>
                             <ContactCard onClick={() => window.open('https://instagram.com/centrostudiartisceniche')}>
-                                <Instagram size={20} className="text-gray-400" />
+                                <Camera size={20} className="text-gray-400" />
                                 <div className="flex-1"><p className="text-xs text-gray-400 m-0 font-bold uppercase">Instagram</p><p className="font-semibold text-gray-800 m-0">@centrostudiartisceniche</p></div>
                                 <ExternalLink size={16} className="text-[#c8151b]" />
                             </ContactCard>
                             <ContactCard onClick={() => window.open('https://facebook.com/centrostudiartisceniche')}>
-                                <Facebook size={20} className="text-gray-400" />
+                                <Share2 size={20} className="text-gray-400" />
                                 <div className="flex-1"><p className="text-xs text-gray-400 m-0 font-bold uppercase">Facebook</p><p className="font-semibold text-gray-800 m-0">Centro Studi Arti Sceniche</p></div>
                                 <ExternalLink size={16} className="text-[#c8151b]" />
                             </ContactCard>
