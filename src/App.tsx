@@ -159,7 +159,11 @@ export default function App() {
                 {/* PAGE 4 - CONTATTI (UGUALE AL TUO ORIGINALE) */}
                 {currentPage === 4 && (
                     <div className="animate-fadeIn space-y-8">
-                        <img src="/staff.jpg" className="w-full rounded-2xl shadow-md aspect-[1.6] object-cover" alt="Staff" />
+                        <img
+                            src="/staff.jpg"
+                            className="w-full rounded-2xl shadow-sm border border-gray-100 object-contain bg-white p-2"
+                            alt="Staff"
+                        />
 
                         {/* DOVE SIAMO */}
                         <div className="text-left">
