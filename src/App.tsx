@@ -22,9 +22,9 @@ const PROGRAMMA_DATA = [
         title: '🎬 PRIMO TEMPO',
         subtitle: 'La Bottega Fantastica',
         image: '/primotempo.jpeg',
-        description: "Liberamente ispirato al celebre balletto di Gioachino Rossini e Ottorino Respighi, La Bottega Fantastica racconta una storia magica e senza tempo ambientata in un negozio di giocattoli molto speciale.\n\nUn giorno arrivano due famiglie con le loro figlie capricciose alla ricerca della bambola perfetta. La bottegaia mostra allora i suoi preziosi automi che, una volta caricati, prendono vita danzando in spettacolari esibizioni ma nessuna di quelle bambole sembra conquistare le due bambine.\n\nRassegnata, la creatrice decide infine di mostrare le sue ultime e più amate creazioni: due splendide ballerine di can-can. Le due bambole si esibiscono in una danza travolgente e piena di energia, tanto da incantare entrambe le famiglie, che desiderano acquistarle immediatamente. Poiché però esiste una sola coppia, la bottegaia decide di separarle e venderne una a ciascuna famiglia.\n\nQuando cala la sera e il negozio chiude, le due ballerine sono disperate all’idea di doversi separare. Ma allo scoccare delle dieci accade la magia: tutte le bambole della bottega prendono vita e, mosse dall’amicizia e dall’affetto, organizzano la fuga delle due ballerine, fingendone la misteriosa scomparsa.\n\nLa mattina seguente il negozio è nel caos: le ballerine non si trovano più e i clienti, convinti di essere stati ingannati, reagiscono con rabbia contro il bottegaio e la sua assistente. Ma proprio nel momento più difficile, tutte le bambole si animano improvvisamente per difendere il loro padrone e scacciare le famiglie infuriate.\n\nTornata la calma, il bottegaio e la sua assistente comprendono finalmente la straordinaria verità: quelle bambole non sono semplici automi, ma creature capaci di amicizia, lealtà e sentimento. Una favola poetica e divertente che celebra il valore dell’unione, della libertà e dell’affetto.",
+        description: "Liberamente ispirato al celebre balletto di Gioachino Rossini e Ottorino Respighi, La Bottega Fantastica racconta una storia magica e senza tempo ambientata in un negozio di giocattoli molto speciale.\n\nUn giorno arrivano due famiglie con le loro figlie capricciose alla ricerca della bambola perfetta. Il bottegaio mostra allora i suoi preziosi automi che, una volta caricati, prendono vita danzando in spettacolari esibizioni ma nessuna di quelle bambole sembra conquistare le due bambine.\n\nRassegnato, il creatore decide infine di mostrare le sue ultime e più amate creazioni: due splendide ballerine di can-can. Le due bambole si esibiscono in una danza travolgente e piena di energia, tanto da incantare entrambe le famiglie, che desiderano acquistarle immediatamente. Poiché però esiste una sola coppia, il bottegaio decide di separarle e venderne una a ciascuna famiglia.\n\nQuando cala la sera e il negozio chiude, le due ballerine sono disperate all’idea di doversi separare. Ma allo scoccare delle dieci accade la magia: tutte le bambole della bottega prendono vita e, mosse dall’amicizia e dall’affetto, organizzano la fuga delle due ballerine, fingendone la misteriosa scomparsa.\n\nLa mattina seguente il negozio è nel caos: le ballerine non si trovano più e i clienti, convinti di essere stati ingannati, reagiscono con rabbia contro il bottegaio e la sua assistente. Ma proprio nel momento più difficile, tutte le bambole si animano improvvisamente per difendere il loro padrone e scacciare le famiglie infuriate.\n\nTornata la calma, il bottegaio e la sua assistente comprendono finalmente la straordinaria verità: quelle bambole non sono semplici automi, ma creature capaci di amicizia, lealtà e sentimento. Una favola che celebra il valore dell’unione, della libertà e dell’affetto.",
         choreographies: [
-            { title: "1) PRIMI PASSI", courses: "Corsi: Gioco danza, Propedeutico, Accademico 1, 2 e 3", choreographer: "Coreografia di Danila Valentini" },
+            { title: "1) PRIMI PASSI", courses: "Corso Gioco danza", choreographer: "Coreografia di Danila Valentini" },
             { title: "2) LA BOTTEGA FANTASTICA", courses: "Corsi: Gioco danza, Propedeutico, Accademico 1, 2 e 3", choreographer: "Coreografie di Matteo D’Alessio e Danila Valentini" },
         ]
     },
@@ -33,24 +33,24 @@ const PROGRAMMA_DATA = [
         title: '🎬 SECONDO TEMPO',
         subtitle: 'Dieci Anni',
         image: '/secondotempo.jpeg',
-        description: "Ci sono ricordi che non smettono mai di danzare.\n\nQuesto secondo tempo è un viaggio tra emozioni, paure, conquiste e sogni che, anno dopo anno, hanno dato forma alla nostra storia. Ogni coreografia custodisce un frammento di ciò che siamo stati e di ciò che stiamo diventando: le prime timidezze, le sfide affrontate insieme, i sorrisi dietro le quinte, i palchi conquistati con coraggio.\n\nPerché dieci anni non sono soltanto un traguardo, ma il tempo necessario affinché un sogno impari a camminare. E forse, a volare.",
+        description: "Ci sono ricordi che non smettono mai di danzare.\n\nQuesto secondo tempo è un viaggio tra emozioni, paure, conquiste e sogni che, con il passare degli anni, hanno dato forma alla nostra storia. Ogni coreografia custodisce un frammento di ciò che siamo stati e di ciò che stiamo diventando: le prime timidezze, le sfide affrontate insieme, i sorrisi dietro le quinte, i palchi conquistati con coraggio.\n\nPerché dieci anni non sono soltanto un traguardo, ma il tempo necessario affinché un sogno impari a camminare. E forse, a volare.",
         choreographies: [
             { title: '1) 2017 - ABBRONZATISSIMA', courses: "Corso Gioco danza", choreographer: "Coreografia di Danila Valentini" },
-            { title: '2) 2018 – ANNI 90', courses: "Corsi moderno 1 – Hip Hop 2 e 3", choreographer: "Coreografie di Matteo D’Alessio e Andrea Sgarra" },
+            { title: '2) 2018 – ANNI 90', courses: "Corsi: Moderno 1 – Hip Hop 2 e 3", choreographer: "Coreografie di Matteo D’Alessio e Andrea Sgarra" },
             { title: '3) 2019 – CINEMUSIC', courses: "Corso Moderno 2", choreographer: "Coreografia di Matteo D’Alessio" },
-            { title: '4) 2020 – CE LA FAREMO/ANDRA’ TUTTO BEBE', courses: "Corsi Contemporaneo 2 e 3", choreographer: "Coreografie di Rozenn Corbell" },
+            { title: '4) 2020 – CE LA FAREMO/ANDRA’ TUTTO BEBE', courses: "Corsi: Contemporaneo 2 e 3", choreographer: "Coreografie di Rozenn Corbell" },
             { title: '5) 2021 – THE BLUES BROTHERS', courses: "Corso Moderno 3", choreographer: "Coreografia di Matteo D’Alessio" },
-            { title: '6) 2022 - FANTASTICO', courses: "Corsi moderno 1 e 3", choreographer: "Coreografie di Matteo D’Alessio" },
+            { title: '6) 2022 - FANTASTICO', courses: "Corsi: Gioco danza, Moderno 1 e 3", choreographer: "Coreografie di Matteo D’Alessio" },
             { title: '7) 2023 - CATS', courses: "Corso Moderno 3", choreographer: "Coreografia di Matteo D’Alessio" },
             { title: '8) 2024 - GREASE', courses: "Corso Moderno 2", choreographer: "Coreografia di Matteo D’Alessio" },
-            { title: '9) 2025 - CHICAGO', courses: "Corsi moderno 2 e 3", choreographer: "Coreografia di Matteo D’Alessio" },
+            { title: '9) 2025 - CHICAGO', courses: "Corsi: Moderno 2 e 3", choreographer: "Coreografia di Matteo D’Alessio" },
             {
                 title: '10) 2026 – IL PRIMO PASSO VERSO UN NUOVO CAPITOLO',
                 // MODIFICA SEZIONE 10: Trasformata description in subItems
                 subItems: [
                     { subTitle: "• QUANTO FORTE TI PENSAVO", subCourses: "Corso Moderno 3", subChoreographer: "Coreografia di Manolo Casalino" },
                     { subTitle: "• SINGING IN THE RAIN", subCourses: "Corso Burlesque", subChoreographer: "Coreografia di Matteo D’Alessio" },
-                    { subTitle: "• QUEEN BAY", subCourses: "Corsi Hip hop 2 e 3", subChoreographer: "Coreografia di Andrea Sgarra" }
+                    { subTitle: "• QUEEN BAY", subCourses: "Corsi: Hip Hop 2 e 3", subChoreographer: "Coreografia di Andrea Sgarra" }
                 ]
             },
         ]
@@ -252,7 +252,7 @@ export default function App() {
                             <Heart size={32} className="text-[#c8151b] mx-auto mb-3" />
                             <h3 className="text-lg font-black text-[#c8151b] mb-4 uppercase tracking-widest">Ringraziamenti</h3>
                             <div className="bg-white p-8 rounded-2xl shadow-md border-2 border-[#D4AF37] text-sm font-semibold text-gray-700 leading-relaxed uppercase tracking-tight italic">
-                                Grazie a tutte le allieve, alle famiglie e a chi ha collaborato dietro le quinte per rendere possibili questi dieci anni di magia.
+                                Grazie a tutte le allieve e a tutti gli allievi, alle famiglie e a chi ha collaborato dietro le quinte per rendere possibili questi dieci anni di magia.
                             </div>
                         </div>
                     </div>
@@ -325,8 +325,8 @@ export default function App() {
                             </div>
                             <div className="space-y-4">
                                 {[
-                                    { n: "ROZENN CORBELL", r: "Insegnante corso contemporaneo avanzato e danza adulti" },
-                                    { n: "GIORGIA MACRINO", r: "Insegnante corsi di recitazione e musical" },
+                                    { n: "ROZENN CORBELL", r: "Insegnante corso contemporaneo e danza adulti" },
+                                    { n: "GIORGIA MACRINO", r: "Insegnante corsi di recitazione" },
                                     { n: "PAMELA FADDA", r: "Insegnante corsi di canto" },
                                     { n: "ANDREA SGARRA", r: "Insegnante corsi di hip hop" },
                                     { n: "DANILA VALENTINI", r: "Insegnante corsi di gioco danza" },
