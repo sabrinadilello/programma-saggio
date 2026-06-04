@@ -46,26 +46,43 @@ const PROGRAMMA_DATA = [
             { title: '9) 2025 - CHICAGO', courses: "Corsi moderno 2 e 3", choreographer: "Coreografia di Matteo D’Alessio" },
             {
                 title: '10) 2026 – IL PRIMO PASSO VERSO UN NUOVO CAPITOLO',
-                description: "• QUANTO FORTE TI PENSAVO\nCorso Moderno 3\nCoreografia di Manolo Casalino\n\n• SINGING IN THE RAIN\nCorso Burlesque\nCoreografia di Matteo D’Alessio\n\n• QUEEN BAY\nCorsi Hip hop 2 e 3\nCoreografia di Andrea Sgarra"
+                // MODIFICA SEZIONE 10: Trasformata description in subItems
+                subItems: [
+                    { subTitle: "• QUANTO FORTE TI PENSAVO", subCourses: "Corso Moderno 3", subChoreographer: "Coreografia di Manolo Casalino" },
+                    { subTitle: "• SINGING IN THE RAIN", subCourses: "Corso Burlesque", subChoreographer: "Coreografia di Matteo D’Alessio" },
+                    { subTitle: "• QUEEN BAY", subCourses: "Corsi Hip hop 2 e 3", subChoreographer: "Coreografia di Andrea Sgarra" }
+                ]
             },
         ]
     }
 ];
 
-const ChoreographyItem = ({ title, courses, choreographer, description }: any) => (
+const ChoreographyItem = ({ title, courses, choreographer, description, subItems }: any) => (
     <div className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-[#D4AF37] mb-6 text-left">
         <div>
-            {/* RIMOSSO GRASSETTO DAI TITOLI (font-medium invece di extrabold) */}
             <h4 className="font-medium text-[#1A1A1A] m-0 text-lg uppercase tracking-tight">{title}</h4>
-            <p className="text-xs text-gray-500 m-0 uppercase font-bold tracking-widest mt-2">{courses}</p>
-            {/* RIMOSSO GRASSETTO DAI COREOGRAFI (font-medium) */}
+            {courses && <p className="text-xs text-gray-500 m-0 uppercase font-bold tracking-widest mt-2">{courses}</p>}
             {choreographer && (
                 <p className="text-sm text-[#c8151b] font-medium m-0 mt-2 italic tracking-tight">
                     {choreographer}
                 </p>
             )}
         </div>
-        {description && (
+
+        {/* LOGICA PER UNIFORMARE LA SEZIONE 10 ALLA 9 */}
+        {subItems && (
+            <div className="mt-4 pt-4 border-t border-gray-100 space-y-5">
+                {subItems.map((item: any, idx: number) => (
+                    <div key={idx}>
+                        <p className="text-base text-[#1A1A1A] m-0 italic font-medium">{item.subTitle}</p>
+                        <p className="text-[11px] text-gray-500 m-0 uppercase font-bold tracking-widest mt-1">{item.subCourses}</p>
+                        <p className="text-sm text-[#c8151b] font-medium m-0 mt-1 italic tracking-tight">{item.subChoreographer}</p>
+                    </div>
+                ))}
+            </div>
+        )}
+
+        {description && !subItems && (
             <div className="mt-4 pt-4 border-t border-gray-100 whitespace-pre-wrap">
                 <p className="text-sm text-gray-600 leading-relaxed m-0 italic font-medium">{description}</p>
             </div>
@@ -164,7 +181,6 @@ export default function App() {
                             <p className="italic">È con grande gioia che vi accogliamo al nostro saggio di fine anno: una celebrazione di ogni singolo passo compiuto dalle nostre allieve – dalle più piccole alle più grandi.</p>
                             <p className="italic">Quello che vedrete sul palco è il risultato di mesi di impegno, disciplina, emozioni condivise.</p>
                             <p className="italic">Quando si danza, si cresce. Si scopre sé stessi, si trova il coraggio di brillare davanti agli altri.</p>
-                            {/* RIMOSSO GRASSETTO (font-medium invece di extrabold) */}
                             <p className="font-medium pt-4 text-[#c8151b] text-lg uppercase">Grazie per essere qui. <br /> Buono spettacolo!</p>
                         </div>
                         <div className="py-10 border-y border-gray-200">
@@ -173,12 +189,10 @@ export default function App() {
                                 <p>"A chi ha creduto in sé stesso per la prima volta."</p>
                                 <p>"A chi ha scelto di brillare, nonostante la fatica."</p>
                                 <p>"A chi ha danzato con il cuore e con l'anima."</p>
-                                {/* RIMOSSO GRASSETTO (font-medium invece di black) */}
                                 <p className="font-medium text-[#c8151b] text-xl mt-8 italic uppercase tracking-tighter">Questo saggio è per voi.</p>
                             </div>
                         </div>
                         <div className="pt-4">
-                            {/* RIMOSSO GRASSETTO (font-medium invece di extrabold) */}
                             <p className="font-medium italic text-2xl m-0 text-gray-900 tracking-tight">Matteo D'Alessio</p>
                             <p className="text-gray-400 text-[10px] uppercase tracking-[0.2em] mt-1 font-bold">Direzione Artistica – Centro Studi Arti Sceniche</p>
                         </div>
@@ -192,7 +206,6 @@ export default function App() {
                             <div className="text-gray-800 text-base m-0">
                                 <p className="font-bold italic text-xl uppercase tracking-tight">Dieci anni dopo il primo passo</p>
                                 <br />
-                                {/* UNIFORMATE LE SCRITTE (font-normal/medium invece di grassetto) */}
                                 <p className="font-normal text-gray-600">è un viaggio tra ricordi, sogni, paure e traguardi che hanno segnato il cammino della nostra scuola.</p>
                                 <br />
                                 <p className="font-normal">A guidare questo racconto sono <br />
@@ -224,7 +237,6 @@ export default function App() {
                         <h2 className="text-3xl font-black text-gray-900 uppercase tracking-[0.2em] mb-8">Programma</h2>
                         {PROGRAMMA_DATA.map((section) => (
                             <div key={section.id} className="pb-10 border-b border-gray-200 last:border-0">
-                                {/* RIMOSSO GRASSETTO DA PRIMO/SECONDO TEMPO (font-medium invece di black) */}
                                 <h2 className="text-xl font-medium text-[#c8151b] m-0 uppercase tracking-tighter">{section.title}</h2>
                                 <p className="text-base font-bold text-gray-800 mb-6 uppercase tracking-tight italic">{section.subtitle}</p>
                                 <img src={section.image} className="w-full rounded-xl shadow-md mb-6 aspect-video object-cover" alt="" />
