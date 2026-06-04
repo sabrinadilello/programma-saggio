@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react';
-import { MapPin, Info, Home, BookOpen, Users, Globe, ChevronDown, ChevronUp, Heart, Clock } from 'lucide-react';
+import { MapPin, Info, Home, BookOpen, Users, Globe, ChevronDown, ChevronUp, Heart, Phone, Mail, Instagram, Facebook, ExternalLink } from 'lucide-react';
 
-// --- DATI DEL SAGGIO 2026 ---
+// --- DATI PROGRAMMA DI SALA 2026 ---
 const PROGRAMMA_DATA = [
     {
         id: 'p1',
         title: '🎬 PRIMO TEMPO',
         subtitle: 'La Bottega Fantastica',
-        image: '/primotempo.jpeg', // Carica questa immagine nella cartella public
-        description: "Liberamente ispirato al celebre balletto di Rossini e Respighi, racconta una storia magica ambientata in un negozio di giocattoli molto speciale, dove le bambole prendono vita nel cuore della notte.",
+        image: '/primotempo.jpeg',
+        description: "Liberamente ispirato al celebre balletto di Rossini e Respighi, racconta una storia magica in un negozio di giocattoli molto speciale, dove le bambole prendono vita nel cuore della notte.",
         choreographies: [
             { title: "1) PRIMI PASSI", courses: "Gioco danza, Propedeutico, Accademico 1, 2 e 3", choreographer: "Danila Valentini", description: "L'apertura dedicata ai più piccoli della scuola che muovono i loro primi passi nel mondo della danza." },
             { title: "2) LA BOTTEGA FANTASTICA", courses: "Balletto in un atto", choreographer: "Matteo D’Alessio e Danila Valentini", description: "Due splendide ballerine di can-can e i preziosi automi della bottega prendono vita in una danza travolgente e piena di energia." },
@@ -18,46 +18,45 @@ const PROGRAMMA_DATA = [
         id: 'p2',
         title: '🎬 SECONDO TEMPO',
         subtitle: 'Dieci Anni',
-        image: '/secondotempo.jpeg', // Carica questa immagine nella cartella public
+        image: '/secondotempo.jpeg',
         description: "Un viaggio tra emozioni, paure, conquiste e sogni che, anno dopo anno, hanno dato forma alla nostra storia. Ogni coreografia custodisce un frammento di ciò che siamo stati e di ciò che stiamo diventando.",
         choreographies: [
             { title: '2017 - ABBRONZATISSIMA', courses: "Corso Gioco danza", choreographer: "Danila Valentini", description: "L'inizio del nostro viaggio, il primo palco." },
             { title: '2018 – ANNI 90', courses: "Moderno 1 – Hip Hop 2 e 3", choreographer: "Matteo D’Alessio e Andrea Sgarra", description: "Ritmo e grinta per celebrare il secondo anno." },
             { title: '2019 – CINEMUSIC', courses: "Corso Moderno 2", choreographer: "Matteo D’Alessio", description: "Le più grandi colonne sonore del cinema." },
             { title: '2020 – CE LA FAREMO', courses: "Corsi Contemporaneo 2 e 3", choreographer: "Rozenn Corbell", description: "Un messaggio di speranza attraverso il movimento." },
-            { title: '2021 – THE BLUES BROTHERS', courses: "Corso Moderno 3", choreographer: "Matteo D’Alessio", description: "Energia pura a ritmo di blues." },
             { title: '2026 – NUOVO CAPITOLO', courses: "Vari Corsi", choreographer: "Casalino, D'Alessio, Sgarra", description: "Il gran finale che celebra dieci anni di danza e amicizia." },
         ]
     }
 ];
 
-// --- COMPONENTE ACCORDION (Logica identica all'originale) ---
+// --- COMPONENTI UTILI ---
 const ChoreographyItem = ({ title, courses, choreographer, description }: any) => {
     const [isExpanded, setIsExpanded] = useState(false);
     return (
-        <div
-            onClick={() => setIsExpanded(!isExpanded)}
-            className="bg-white p-4 rounded-xl shadow-sm border-l-4 border-[#D4AF37] mb-3 cursor-pointer transition-all active:scale-95"
-        >
+        <div onClick={() => setIsExpanded(!isExpanded)} className="bg-white p-4 rounded-xl shadow-sm border-l-4 border-[#D4AF37] mb-3 cursor-pointer transition-all active:scale-95">
             <div className="flex justify-between items-center">
-                <div className="flex-1">
+                <div className="flex-1 text-left">
                     <h4 className="font-bold text-[#1A1A1A] m-0 text-sm">{title}</h4>
-                    <p className="text-[11px] text-gray-500 m-0 uppercase tracking-tight">{courses}</p>
+                    <p className="text-[11px] text-gray-500 m-0 uppercase">{courses}</p>
                     <p className="text-[11px] text-[#c8151b] font-semibold m-0 italic">Coreografia: {choreographer}</p>
                 </div>
                 {isExpanded ? <ChevronUp size={20} className="text-gray-400" /> : <ChevronDown size={20} className="text-gray-400" />}
             </div>
-            {isExpanded && (
-                <div className="mt-3 pt-3 border-t border-gray-100 animate-fadeIn">
-                    <p className="text-xs text-gray-600 leading-relaxed">{description}</p>
-                </div>
-            )}
+            {isExpanded && <div className="mt-3 pt-3 border-t border-gray-100 animate-fadeIn"><p className="text-xs text-gray-600 leading-relaxed text-left">{description}</p></div>}
         </div>
     );
 };
 
+const ContactCard = ({ children, onClick }: any) => (
+    <button onClick={onClick} className="w-full bg-white p-5 rounded-2xl shadow-sm border border-transparent hover:border-[#c8151b]/20 mb-3 flex items-center gap-4 transition-all active:scale-95 cursor-pointer text-left">
+        {children}
+    </button>
+);
+
 export default function App() {
     const [currentPage, setCurrentPage] = useState(1);
+    const [openSection, setOpenSection] = useState<string | null>(null);
 
     useEffect(() => { window.scrollTo({ top: 0, behavior: 'smooth' }); }, [currentPage]);
 
@@ -65,11 +64,11 @@ export default function App() {
         { page: 1, Icon: Home, label: 'Home' },
         { page: 2, Icon: BookOpen, label: 'Programma' },
         { page: 3, Icon: Users, label: 'Staff' },
-        { page: 4, Icon: Info, label: 'Info' },
+        { page: 4, Icon: Info, label: 'Contatti' },
     ];
 
     return (
-        <div className="min-h-screen bg-[#F8F8F8] text-[#1A1A1A] pb-24 font-sans">
+        <div className="min-h-screen bg-[#F8F8F8] text-[#1A1A1A] pb-24 font-sans text-center">
             <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
         body { font-family: 'Inter', sans-serif; margin: 0; background-color: #F8F8F8; }
@@ -91,11 +90,13 @@ export default function App() {
                 </div>
             </nav>
 
-            {/* HEADER */}
-            <header className="header-gradient text-white pt-12 pb-8 px-6 text-center shadow-md">
-                <Clock size={40} className="mx-auto text-[#D4AF37] mb-2" />
-                <h1 className="text-2xl font-bold uppercase tracking-widest m-0">Programma di Sala</h1>
-                <p className="text-sm opacity-80 mt-1 italic">Saggio Spettacolo 2026</p>
+            {/* HEADER DINAMICO */}
+            <header className="header-gradient text-white pt-12 pb-8 px-6 shadow-md">
+                {currentPage === 4 ? <Phone size={40} className="mx-auto text-[#D4AF37] mb-2" /> : <Info size={40} className="mx-auto text-[#D4AF37] mb-2" />}
+                <h1 className="text-2xl font-bold uppercase tracking-widest m-0">
+                    {currentPage === 4 ? "Contatti e Info" : "Saggio 2026"}
+                </h1>
+                <p className="text-sm opacity-80 mt-1 italic">Dieci anni dopo il primo passo</p>
             </header>
 
             <main className="max-w-md mx-auto p-6">
@@ -103,43 +104,32 @@ export default function App() {
                 {/* PAGE 1 - HOME */}
                 {currentPage === 1 && (
                     <div className="animate-fadeIn">
-                        <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 italic text-center mb-8 leading-relaxed text-gray-700">
+                        <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 italic mb-8 leading-relaxed text-gray-700">
                             "<strong>Dieci anni dopo il primo passo</strong> è un viaggio tra ricordi, sogni e traguardi. A guidare questo racconto sono Insicurezza, Coraggio e Ambizione..."
                         </div>
                         <img src="/locandina.jpeg" className="w-full rounded-2xl shadow-xl border-4 border-white" alt="Locandina" />
                     </div>
                 )}
 
-                {/* PAGE 2 - PROGRAMMA (STESSA LOGICA DEL VECCHIO) */}
+                {/* PAGE 2 - PROGRAMMA */}
                 {currentPage === 2 && (
                     <div className="animate-fadeIn space-y-10">
                         {PROGRAMMA_DATA.map((section) => (
                             <div key={section.id}>
-                                <div className="text-center mb-6">
-                                    <h2 className="text-xl font-bold text-[#c8151b] m-0 uppercase">{section.title}</h2>
-                                    <p className="text-lg font-semibold text-gray-800 m-0">{section.subtitle}</p>
-                                </div>
-
+                                <h2 className="text-xl font-bold text-[#c8151b] m-0 uppercase">{section.title}</h2>
+                                <p className="text-lg font-semibold text-gray-800 mb-6">{section.subtitle}</p>
                                 <img src={section.image} className="w-full rounded-xl shadow-md mb-6 aspect-video object-cover" />
-
-                                <div className="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 text-sm text-center mb-6 leading-relaxed">
-                                    {section.description}
-                                </div>
-
+                                <div className="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 text-sm mb-6 leading-relaxed">{section.description}</div>
                                 <div className="space-y-3">
-                                    {section.choreographies.map((ch, idx) => (
-                                        <ChoreographyItem key={idx} {...ch} />
-                                    ))}
+                                    {section.choreographies.map((ch, idx) => (<ChoreographyItem key={idx} {...ch} />))}
                                 </div>
                             </div>
                         ))}
-
-                        {/* RINGRAZIAMENTI (STESSO LOOK DEL VECCHIO) */}
-                        <div className="mt-12 text-center animate-fadeIn">
+                        <div className="mt-12 animate-fadeIn">
                             <Heart size={32} className="text-[#c8151b] mx-auto mb-3" />
-                            <h3 className="text-xl font-bold text-[#c8151b] mb-4">Ringraziamenti Speciali</h3>
+                            <h3 className="text-xl font-bold text-[#c8151b] mb-4">Ringraziamenti</h3>
                             <div className="bg-white p-6 rounded-2xl shadow-md border-2 border-[#D4AF37] text-sm leading-relaxed text-gray-700">
-                                Un grazie sentito a tutte le allieve, alle famiglie e a chi ha collaborato dietro le quinte per rendere possibile questi dieci anni di magia.
+                                Un grazie sentito a tutte le allieve, alle famiglie e a chi ha collaborato dietro le quinte.
                             </div>
                         </div>
                     </div>
@@ -166,23 +156,60 @@ export default function App() {
                     </div>
                 )}
 
-                {/* PAGE 4 - TEATRO */}
+                {/* PAGE 4 - CONTATTI (UGUALE AL TUO ORIGINALE) */}
                 {currentPage === 4 && (
-                    <div className="animate-fadeIn space-y-6">
-                        <h2 className="text-2xl font-bold mb-6 text-center">Info e Teatro</h2>
-                        <div className="bg-white p-8 rounded-2xl shadow-md space-y-8">
-                            <div>
-                                <h3 className="text-xl font-bold text-[#c8151b] m-0">Teatro San Raffaele</h3>
-                                <p className="text-gray-600 mt-2">Via di S. Raffaele, 6, 00148 Roma RM</p>
+                    <div className="animate-fadeIn space-y-8">
+                        <img src="/staff.jpg" className="w-full rounded-2xl shadow-md aspect-[1.6] object-cover" alt="Staff" />
+
+                        {/* DOVE SIAMO */}
+                        <div className="text-left">
+                            <div className="flex items-center gap-2 mb-4 text-[#c8151b]">
+                                <MapPin size={28} /> <h3 className="text-xl font-bold m-0 text-gray-900">Dove siamo</h3>
                             </div>
-                            <div className="flex flex-col gap-4">
-                                <a href="https://maps.google.com/?q=Teatro+San+Raffaele+Roma" target="_blank" className="bg-[#c8151b] text-white py-4 rounded-xl font-bold text-center no-underline">Apri Mappe</a>
-                                <a href="https://www.teatrosanraffaele.it/" target="_blank" className="border border-gray-300 py-4 rounded-xl font-bold text-gray-700 text-center no-underline">Sito Ufficiale</a>
+                            <ContactCard onClick={() => window.open('https://maps.google.com/?q=Via+Mare+di+Bering+42,+Ostia')}>
+                                <div className="flex-1">
+                                    <p className="font-semibold text-gray-800 m-0">Via Mare di Bering 42, Ostia</p>
+                                    <p className="text-[#c8151b] text-sm font-bold mt-2">👉 Apri in Google Maps <ExternalLink size={14} className="inline ml-1" /></p>
+                                </div>
+                            </ContactCard>
+                        </div>
+
+                        {/* CONTATTI DIRETTI */}
+                        <div className="text-left">
+                            <div className="flex items-center gap-2 mb-4 text-[#c8151b]">
+                                <Phone size={28} /> <h3 className="text-xl font-bold m-0 text-gray-900">Contatti</h3>
                             </div>
+                            <ContactCard onClick={() => window.open('tel:+393922752576')}>
+                                <div><p className="text-xs text-gray-400 m-0 font-bold">TELEFONO</p><p className="font-semibold text-gray-800 m-0 text-lg">392 2752576</p></div>
+                            </ContactCard>
+                            <ContactCard onClick={() => window.open('mailto:info@centrostudiartisceniche.it')}>
+                                <div className="overflow-hidden"><p className="text-xs text-gray-400 m-0 font-bold uppercase">Email</p><p className="font-semibold text-gray-800 m-0 text-sm truncate">info@centrostudiartisceniche.it</p></div>
+                            </ContactCard>
+                        </div>
+
+                        {/* SOCIAL E WEB */}
+                        <div className="text-left">
+                            <div className="flex items-center gap-2 mb-4 text-[#c8151b]">
+                                <Globe size={28} /> <h3 className="text-xl font-bold m-0 text-gray-900">Online</h3>
+                            </div>
+                            <ContactCard onClick={() => window.open('https://www.centrostudiartisceniche.it')}>
+                                <Globe size={20} className="text-gray-400" />
+                                <div className="flex-1"><p className="text-xs text-gray-400 m-0 font-bold uppercase">Sito Web</p><p className="font-semibold text-gray-800 m-0">www.centrostudiartisceniche.it</p></div>
+                                <ExternalLink size={16} className="text-[#c8151b]" />
+                            </ContactCard>
+                            <ContactCard onClick={() => window.open('https://instagram.com/centrostudiartisceniche')}>
+                                <Instagram size={20} className="text-gray-400" />
+                                <div className="flex-1"><p className="text-xs text-gray-400 m-0 font-bold uppercase">Instagram</p><p className="font-semibold text-gray-800 m-0">@centrostudiartisceniche</p></div>
+                                <ExternalLink size={16} className="text-[#c8151b]" />
+                            </ContactCard>
+                            <ContactCard onClick={() => window.open('https://facebook.com/centrostudiartisceniche')}>
+                                <Facebook size={20} className="text-gray-400" />
+                                <div className="flex-1"><p className="text-xs text-gray-400 m-0 font-bold uppercase">Facebook</p><p className="font-semibold text-gray-800 m-0">Centro Studi Arti Sceniche</p></div>
+                                <ExternalLink size={16} className="text-[#c8151b]" />
+                            </ContactCard>
                         </div>
                     </div>
                 )}
-
             </main>
         </div>
     );
