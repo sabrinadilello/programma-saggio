@@ -94,7 +94,6 @@ export default function App() {
     return (
         <div className="min-h-screen bg-[#F8F8F8] text-[#1A1A1A] pb-24 overflow-x-hidden">
             <style>{`
-                /* Import aggiornato con supporto completo per Italic in tutti i pesi */
                 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300..800;1,300..800&display=swap');
                 
                 * {
@@ -140,7 +139,7 @@ export default function App() {
             <header className="header-gradient text-white pt-12 pb-8 px-6 text-center shadow-md">
                 {currentPage === 2 ? (
                     <div className="animate-fadeIn">
-                        <h1 className="text-xl font-extrabold uppercase tracking-[0.2em] m-0">Saggio 2026</h1>
+                        <h1 className="text-xl font-extrabold uppercase tracking-[0.2em] m-0 italic">Saggio 2026</h1>
                     </div>
                 ) : (
                     <div className="h-8" />
@@ -160,7 +159,7 @@ export default function App() {
                             <p className="italic">È con grande gioia che vi accogliamo al nostro saggio di fine anno: una celebrazione di ogni singolo passo compiuto dalle nostre allieve – dalle più piccole alle più grandi.</p>
                             <p className="italic">Quello che vedrete sul palco è il risultato di mesi di impegno, disciplina, emozioni condivise.</p>
                             <p className="italic">Quando si danza, si cresce. Si scopre sé stessi, si trova il coraggio di brillare davanti agli altri.</p>
-                            <p className="font-extrabold pt-4 text-[#c8151b] text-base uppercase">Grazie per essere qui. <br /> Buono spettacolo!</p>
+                            <p className="font-extrabold pt-4 text-[#c8151b] text-base uppercase italic">Grazie per essere qui. <br /> Buono spettacolo!</p>
                         </div>
                         <div className="py-10 border-y border-gray-200">
                             <h2 className="text-[#c8151b] text-xl font-black mb-6 uppercase tracking-widest">Dediche</h2>
@@ -168,7 +167,7 @@ export default function App() {
                                 <p>"A chi ha creduto in sé stesso per la prima volta."</p>
                                 <p>"A chi ha scelto di brillare, nonostante la fatica."</p>
                                 <p>"A chi ha danzato con il cuore e con l'anima."</p>
-                                <p className="font-black text-[#c8151b] text-lg mt-8 italic tracking-tighter uppercase">Questo saggio è per voi.</p>
+                                <p className="font-black text-[#c8151b] text-lg mt-8 italic uppercase tracking-tighter">Questo saggio è per voi.</p>
                             </div>
                         </div>
                         <div className="pt-4">
@@ -213,19 +212,15 @@ export default function App() {
                 {/* PAGE 3 - PROGRAMMA */}
                 {currentPage === 3 && (
                     <div className="animate-fadeIn space-y-12">
-                        {/* TITOLO PIU GRANDE (text-3xl) */}
                         <h2 className="text-3xl font-black text-gray-900 uppercase tracking-[0.2em] mb-8">Programma</h2>
                         {PROGRAMMA_DATA.map((section) => (
                             <div key={section.id} className="pb-10 border-b border-gray-200 last:border-0">
                                 <h2 className="text-lg font-black text-[#c8151b] m-0 uppercase tracking-tighter">{section.title}</h2>
                                 <p className="text-sm font-bold text-gray-800 mb-6 uppercase tracking-tight italic">{section.subtitle}</p>
                                 <img src={section.image} className="w-full rounded-xl shadow-md mb-6 aspect-video object-cover" alt="" />
-
-                                {/* DESCRIZIONE PIU GRANDE (text-base) E CORSIVA */}
                                 <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-base mb-8 leading-relaxed text-left whitespace-pre-wrap text-gray-600 font-medium italic">
                                     {section.description}
                                 </div>
-
                                 <div className="space-y-4">
                                     {section.choreographies.map((ch, idx) => (<ChoreographyItem key={idx} {...ch} />))}
                                 </div>
@@ -268,6 +263,38 @@ export default function App() {
                                 <p className="text-[9px] font-black text-gray-400 uppercase mb-1 tracking-widest">Email:</p>
                                 <p className="text-xs text-gray-800 m-0 font-bold truncate italic">info@centrostudiartisceniche.it</p>
                             </button>
+                        </div>
+
+                        <div className="section">
+                            <div className="flex items-center gap-3 mb-4 text-[#c8151b]">
+                                <Globe size={28} /> <h3 className="text-lg font-black m-0 text-gray-900 uppercase tracking-tight">Online</h3>
+                            </div>
+                            <div className="space-y-3">
+                                <button onClick={() => window.open('https://www.centrostudiartisceniche.it')} className="w-full bg-white p-5 rounded-xl shadow-md border-none flex items-center gap-4 cursor-pointer text-left">
+                                    <Globe size={18} className="text-gray-400" />
+                                    <div className="flex-1">
+                                        <p className="text-[9px] font-black text-gray-400 uppercase tracking-widest mb-1">Sito Web:</p>
+                                        <p className="text-xs text-gray-800 m-0 font-bold italic">www.centrostudiartisceniche.it</p>
+                                    </div>
+                                    <ExternalLink size={14} className="text-[#c8151b]" />
+                                </button>
+                                <button onClick={() => window.open('https://instagram.com/centrostudiartisceniche')} className="w-full bg-white p-5 rounded-xl shadow-md border-none flex items-center gap-4 cursor-pointer text-left">
+                                    <Instagram size={18} className="text-gray-400" />
+                                    <div className="flex-1">
+                                        <p className="text-[9px] font-black text-gray-400 uppercase tracking-widest mb-1">Instagram:</p>
+                                        <p className="text-xs text-gray-800 m-0 font-bold italic">@centrostudiartisceniche</p>
+                                    </div>
+                                    <ExternalLink size={14} className="text-[#c8151b]" />
+                                </button>
+                                <button onClick={() => window.open('https://facebook.com/centrostudiartisceniche')} className="w-full bg-white p-5 rounded-xl shadow-md border-none flex items-center gap-4 cursor-pointer text-left">
+                                    <Facebook size={18} className="text-gray-400" />
+                                    <div className="flex-1">
+                                        <p className="text-[9px] font-black text-gray-400 uppercase tracking-widest mb-1">Facebook:</p>
+                                        <p className="text-xs text-gray-800 m-0 font-bold italic">Centro Studi Arti Sceniche</p>
+                                    </div>
+                                    <ExternalLink size={14} className="text-[#c8151b]" />
+                                </button>
+                            </div>
                         </div>
 
                         <div className="section pb-10">
