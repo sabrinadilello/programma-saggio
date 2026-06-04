@@ -165,7 +165,7 @@ export default function App() {
                             <p className="italic">Quello che vedrete sul palco è il risultato di mesi di impegno, disciplina, emozioni condivise.</p>
                             <p className="italic">Quando si danza, si cresce. Si scopre sé stessi, si trova il coraggio di brillare davanti agli altri.</p>
                             {/* RIMOSSO GRASSETTO (font-medium invece di extrabold) */}
-                            <p className="font-medium pt-4 text-[#c8151b] text-lg uppercase italic">Grazie per essere qui. <br /> Buono spettacolo!</p>
+                            <p className="font-medium pt-4 text-[#c8151b] text-lg uppercase">Grazie per essere qui. <br /> Buono spettacolo!</p>
                         </div>
                         <div className="py-10 border-y border-gray-200">
                             <h2 className="text-[#c8151b] text-xl font-black mb-6 uppercase tracking-widest">Dediche</h2>
@@ -193,11 +193,11 @@ export default function App() {
                                 <p className="font-bold italic text-xl uppercase tracking-tight">Dieci anni dopo il primo passo</p>
                                 <br />
                                 {/* UNIFORMATE LE SCRITTE (font-normal/medium invece di grassetto) */}
-                                <p className="italic font-normal text-gray-600">è un viaggio tra ricordi, sogni, paure e traguardi che hanno segnato il cammino della nostra scuola.</p>
+                                <p className="font-normal text-gray-600">è un viaggio tra ricordi, sogni, paure e traguardi che hanno segnato il cammino della nostra scuola.</p>
                                 <br />
                                 <p className="font-normal">A guidare questo racconto sono <br />
-                                    <strong className="text-[#c8151b] italic font-normal uppercase">Insicurezza, Coraggio e Ambizione:</strong> <br />
-                                    <span className="italic font-normal text-gray-600">tre voci che accompagnano il pubblico attraverso dieci anni di crescita, emozioni e passione.</span>
+                                    <strong className="text-[#c8151b] font-normal uppercase">Insicurezza, Coraggio e Ambizione:</strong> <br />
+                                    <span className="font-normal text-gray-600">tre voci che accompagnano il pubblico attraverso dieci anni di crescita, emozioni e passione.</span>
                                 </p>
                             </div>
                         </div>
