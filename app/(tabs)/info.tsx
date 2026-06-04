@@ -4,7 +4,7 @@ import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Linking, Platform
 import { LinearGradient } from 'expo-linear-gradient';
 import { Info as InfoIcon, MapPin, ExternalLink, Globe } from 'lucide-react-native';
 
-// 1. CAMBIO LOCANDINA
+// Importazione della locandina aggiornata
 import LocandinaImageSource from '../../assets/images/locandinadef.jpeg';
 
 export default function InfoScreen() {
@@ -16,7 +16,7 @@ export default function InfoScreen() {
     }, [])
   );
 
-  // 2. CAMBIO TEATRO E INDIRIZZO
+  // Dati Teatro San Raffaele
   const teatroAddress = 'Teatro San Raffaele, Via di S. Raffaele, 6, 00148 Roma RM';
   const teatroWebsite = 'https://www.teatrosanraffaele.it/';
 
@@ -36,6 +36,7 @@ export default function InfoScreen() {
       style={styles.container}
       contentContainerStyle={styles.scrollContentContainer}
     >
+      {/* Header con gradiente */}
       <LinearGradient
         colors={['#1A1A1A', '#c8151b']}
         style={styles.header}>
@@ -46,6 +47,16 @@ export default function InfoScreen() {
       </LinearGradient>
 
       <View style={styles.content}>
+
+        {/* SEZIONE INTRODUTTIVA */}
+        <View style={styles.introSection}>
+          <Text style={styles.descriptionText}>
+            <Text style={styles.boldItalic}>Dieci anni dopo il primo passo</Text> è un viaggio tra ricordi, sogni, paure e traguardi che hanno segnato il cammino della nostra scuola.{"\n\n"}
+            A guidare questo racconto sono <Text style={styles.semiBold}>Insicurezza, Coraggio e Ambizione</Text>: tre voci che accompagnano il pubblico attraverso dieci anni di crescita, emozioni e passione, celebrando non solo le persone che hanno reso possibile questa storia, ma anche tutti quei momenti indimenticabili che hanno lasciato un segno nel cuore della nostra scuola.
+          </Text>
+        </View>
+
+        {/* CONTENITORE LOCANDINA */}
         <View style={styles.imageContainer}>
           <Image
             source={LocandinaImageSource}
@@ -54,10 +65,11 @@ export default function InfoScreen() {
           />
         </View>
 
+        {/* SEZIONE TEATRO */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Il Teatro</Text>
           <View style={styles.infoCard}>
-            <MapPin size={24} color="#c8151b" style={{ marginRight: 15 }} />
+            <MapPin size={24} color="#c8151b" style={{ marginRight: 15, marginTop: 5 }} />
             <View style={{ flex: 1 }}>
               <Text style={styles.theaterName}>Teatro San Raffaele</Text>
               <Text style={styles.theaterAddress}>Via di S. Raffaele, 6, 00148 Roma RM</Text>
@@ -107,6 +119,24 @@ const styles = StyleSheet.create({
   content: {
     padding: 20,
   },
+  introSection: {
+    marginBottom: 35,
+    paddingHorizontal: 5,
+  },
+  descriptionText: {
+    fontSize: 16,
+    lineHeight: 24,
+    fontFamily: 'Inter-Regular',
+    color: '#333333',
+    textAlign: 'center',
+  },
+  boldItalic: {
+    fontFamily: 'Inter-Bold',
+    fontStyle: 'italic',
+  },
+  semiBold: {
+    fontFamily: 'Inter-SemiBold',
+  },
   section: {
     marginBottom: 40,
   },
@@ -120,14 +150,14 @@ const styles = StyleSheet.create({
   imageContainer: {
     width: '100%',
     aspectRatio: 1131 / 1600,
-    marginBottom: 40,
+    marginBottom: 45,
     borderRadius: 12,
     backgroundColor: 'transparent',
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.3,
+    shadowOpacity: 0.2,
     shadowRadius: 8,
-    elevation: 8,
+    elevation: 5,
   },
   locandinaImage: {
     width: '100%',
