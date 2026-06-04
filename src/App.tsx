@@ -160,7 +160,7 @@ export default function App() {
                             <p>È con grande gioia che vi accogliamo al nostro saggio di fine anno: una celebrazione di ogni singolo passo compiuto dalle nostre allieve – dalle più piccole alle più grandi.</p>
                             <p>Quello che vedrete sul palco è il risultato di mesi di impegno, disciplina, emozioni condivise.</p>
                             <p>Quando si danza, si cresce. Si scopre sé stessi, si trova il coraggio di brillare davanti agli altri.</p>
-                            <p className="font-extrabold pt-4 text-[#c8151b] text-base uppercase">Grazie per essere qui. Buono spettacolo!</p>
+                            <p className="font-extrabold pt-4 text-[#c8151b] text-base uppercase">Grazie per essere qui. <br /> Buono spettacolo!</p>
                         </div>
                         <div className="py-10 border-y border-gray-200">
                             <h2 className="text-[#c8151b] text-xl font-black mb-6 uppercase tracking-widest">Dediche</h2>
