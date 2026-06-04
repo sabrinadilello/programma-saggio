@@ -222,6 +222,7 @@ export default function App() {
                 {currentPage === 4 && (
                     <div className="animate-fadeIn space-y-10 text-left">
                         <img src="/staff.jpg" className="w-full rounded-2xl shadow-sm object-contain bg-white p-2" alt="Staff" />
+
                         <div className="section">
                             <div className="flex items-center gap-3 mb-4 text-[#c8151b]">
                                 <MapPin size={32} /> <h3 className="text-xl font-bold m-0 text-gray-900">Dove siamo</h3>
@@ -231,38 +232,63 @@ export default function App() {
                                 <p className="text-[#c8151b] font-bold text-sm mt-2 flex items-center gap-1">👉 Apri in Google Maps <ExternalLink size={14} /></p>
                             </button>
                         </div>
+
                         <div className="section">
                             <div className="flex items-center gap-3 mb-4 text-[#c8151b]">
                                 <Phone size={32} /> <h3 className="text-xl font-bold m-0 text-gray-900">Contatti</h3>
                             </div>
-                            <button onClick={() => window.open('tel:+393922752576')} className="w-full bg-white p-5 rounded-xl shadow-md border-none mb-3 cursor-pointer text-left">
+                            <button onClick={() => window.open('tel:+393922752576')} className="w-full bg-white p-5 rounded-xl shadow-md border-none mb-3 cursor-pointer text-left active:scale-95 transition-all">
                                 <p className="text-xs font-bold text-gray-400 uppercase mb-1">Telefono:</p>
                                 <p className="text-base text-gray-800 m-0 font-semibold">392 2752576</p>
                             </button>
-                            <button onClick={() => window.open('mailto:info@centrostudiartisceniche.it')} className="w-full bg-white p-5 rounded-xl shadow-md border-none cursor-pointer text-left">
+                            <button onClick={() => window.open('mailto:info@centrostudiartisceniche.it')} className="w-full bg-white p-5 rounded-xl shadow-md border-none cursor-pointer text-left active:scale-95 transition-all">
                                 <p className="text-xs font-bold text-gray-400 uppercase mb-1">Email:</p>
                                 <p className="text-sm text-gray-800 m-0 font-semibold truncate">info@centrostudiartisceniche.it</p>
                             </button>
                         </div>
-                        <div className="section pb-10">
+
+                        <div className="section">
                             <div className="flex items-center gap-3 mb-4 text-[#c8151b]">
                                 <Globe size={32} /> <h3 className="text-xl font-bold m-0 text-gray-900">Online</h3>
                             </div>
-                            <button onClick={() => window.open('https://www.centrostudiartisceniche.it')} className="w-full bg-white p-5 rounded-xl shadow-md border-none mb-3 flex items-center gap-4 cursor-pointer text-left">
+                            <button onClick={() => window.open('https://www.centrostudiartisceniche.it')} className="w-full bg-white p-5 rounded-xl shadow-md border-none mb-3 flex items-center gap-4 cursor-pointer active:scale-95 transition-all text-left">
                                 <Globe size={20} className="text-gray-400" />
                                 <div className="flex-1"><p className="text-xs font-bold text-gray-400 uppercase mb-1">Sito Web:</p><p className="text-sm text-gray-800 m-0">www.centrostudiartisceniche.it</p></div>
                                 <ExternalLink size={16} className="text-[#c8151b]" />
                             </button>
-                            <button onClick={() => window.open('https://instagram.com/centrostudiartisceniche')} className="w-full bg-white p-5 rounded-xl shadow-md border-none mb-3 flex items-center gap-4 cursor-pointer text-left">
+                            <button onClick={() => window.open('https://instagram.com/centrostudiartisceniche')} className="w-full bg-white p-5 rounded-xl shadow-md border-none mb-3 flex items-center gap-4 cursor-pointer active:scale-95 text-left">
                                 <Instagram size={20} className="text-gray-400" />
                                 <div className="flex-1"><p className="text-xs font-bold text-gray-400 uppercase mb-1">Instagram:</p><p className="text-sm text-gray-800 m-0">@centrostudiartisceniche</p></div>
                                 <ExternalLink size={16} className="text-[#c8151b]" />
                             </button>
-                            <button onClick={() => window.open('https://facebook.com/centrostudiartisceniche')} className="w-full bg-white p-5 rounded-xl shadow-md border-none flex items-center gap-4 cursor-pointer text-left">
+                            <button onClick={() => window.open('https://facebook.com/centrostudiartisceniche')} className="w-full bg-white p-5 rounded-xl shadow-md border-none flex items-center gap-4 cursor-pointer active:scale-95 text-left">
                                 <Facebook size={20} className="text-gray-400" />
                                 <div className="flex-1"><p className="text-xs font-bold text-gray-400 uppercase mb-1">Facebook:</p><p className="text-sm text-gray-800 m-0">Centro Studi Arti Sceniche</p></div>
                                 <ExternalLink size={16} className="text-[#c8151b]" />
                             </button>
+                        </div>
+
+                        {/* NUOVA SEZIONE STAFF */}
+                        <div className="section pb-10">
+                            <div className="flex items-center gap-3 mb-6 text-[#c8151b]">
+                                <Users size={32} /> <h3 className="text-xl font-bold m-0 text-gray-900 uppercase tracking-widest">Staff</h3>
+                            </div>
+                            <div className="space-y-4">
+                                {[
+                                    { n: "MATTEO D’ALESSIO", r: "Direttore artistico e insegnante corsi di danza" },
+                                    { n: "ROZENN CORBELL", r: "Insegnante corso contemporaneo avanzato e danza adulti" },
+                                    { n: "GIORGIA MACRINO", r: "Insegnante corsi di recitazione e musical" },
+                                    { n: "PAMELA FADDA", r: "Insegnante corsi di canto" },
+                                    { n: "ANDREA SGARRA", r: "Insegnante corsi di hip hop" },
+                                    { n: "DANILA VALENTINI", r: "Insegnante corsi di gioco danza" },
+                                    { n: "DONATELLA PACE", r: "Assistente e collaboratrice amministrativa" }
+                                ].map((m, i) => (
+                                    <div key={i} className="bg-white p-5 rounded-xl shadow-sm border border-gray-50">
+                                        <p className="font-bold text-gray-900 m-0 text-sm uppercase tracking-wide">{m.n}</p>
+                                        <p className="text-xs text-gray-500 m-0 mt-1 italic">{m.r}</p>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 )}
