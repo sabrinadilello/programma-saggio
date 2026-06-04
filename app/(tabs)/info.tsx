@@ -2,20 +2,23 @@ import React, { useRef } from 'react';
 import { useFocusEffect } from 'expo-router';
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Linking, Platform, Image } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { Info as InfoIcon, MapPin, ExternalLink } from 'lucide-react-native';
+import { Info as InfoIcon, MapPin, ExternalLink, Globe } from 'lucide-react-native';
 
-import LocandinaImageSource from '../../assets/images/locandina.jpg';
+// 1. CAMBIO LOCANDINA
+import LocandinaImageSource from '../../assets/images/locandinadef.jpeg';
 
 export default function InfoScreen() {
   const scrollRef = useRef<ScrollView>(null);
-  
+
   useFocusEffect(
     React.useCallback(() => {
       scrollRef.current?.scrollTo({ y: 0, animated: false });
     }, [])
   );
-  
-  const teatroAddress = 'Teatro Domma, Via di Macchia Saponara 106, 00125 Roma';
+
+  // 2. CAMBIO TEATRO E INDIRIZZO
+  const teatroAddress = 'Teatro San Raffaele, Via di S. Raffaele, 6, 00148 Roma RM';
+  const teatroWebsite = 'https://www.teatrosanraffaele.it/';
 
   const openMaps = () => {
     const scheme = Platform.OS === 'ios' ? 'maps:0,0?q=' : 'geo:0,0?q=';
@@ -23,8 +26,12 @@ export default function InfoScreen() {
     Linking.openURL(url);
   };
 
+  const openWebsite = () => {
+    Linking.openURL(teatroWebsite);
+  };
+
   return (
-    <ScrollView 
+    <ScrollView
       ref={scrollRef}
       style={styles.container}
       contentContainerStyle={styles.scrollContentContainer}
@@ -39,7 +46,6 @@ export default function InfoScreen() {
       </LinearGradient>
 
       <View style={styles.content}>
-        {/* MODIFICA CHIAVE: Aggiunto il contenitore con la logica corretta */}
         <View style={styles.imageContainer}>
           <Image
             source={LocandinaImageSource}
@@ -47,17 +53,25 @@ export default function InfoScreen() {
             resizeMode="contain"
           />
         </View>
-      
+
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Il Teatro</Text>
           <View style={styles.infoCard}>
             <MapPin size={24} color="#c8151b" style={{ marginRight: 15 }} />
             <View style={{ flex: 1 }}>
-              <Text style={styles.theaterName}>Teatro Domma</Text>
-              <Text style={styles.theaterAddress}>Via di Macchia Saponara 106, 00125 Roma</Text>
+              <Text style={styles.theaterName}>Teatro San Raffaele</Text>
+              <Text style={styles.theaterAddress}>Via di S. Raffaele, 6, 00148 Roma RM</Text>
+
+              {/* Link Mappe */}
               <TouchableOpacity style={styles.linkContainer} onPress={openMaps}>
-                <Text style={styles.linkText}>👉 Apri in Google Maps</Text>
+                <Text style={styles.linkText}>👉 Apri in Mappe</Text>
                 <ExternalLink size={16} color="#c8151b" />
+              </TouchableOpacity>
+
+              {/* Link Sito Web */}
+              <TouchableOpacity style={[styles.linkContainer, { marginTop: 15 }]} onPress={openWebsite}>
+                <Globe size={18} color="#c8151b" style={{ marginRight: 8 }} />
+                <Text style={styles.linkText}>Sito Ufficiale</Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -103,14 +117,11 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     textAlign: 'center',
   },
-  // --- MODIFICHE APPLICATE QUI ---
   imageContainer: {
     width: '100%',
-    // Usiamo il rapporto reale della locandina (1131/1600 ≈ 0.7) per un fit perfetto
     aspectRatio: 1131 / 1600,
     marginBottom: 40,
     borderRadius: 12,
-    overflow: 'hidden', // Per sicurezza
     backgroundColor: 'transparent',
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 4 },
@@ -121,14 +132,14 @@ const styles = StyleSheet.create({
   locandinaImage: {
     width: '100%',
     height: '100%',
-    borderRadius: 12, // Applichiamo il raggio anche qui per essere sicuri
+    borderRadius: 12,
   },
   infoCard: {
     backgroundColor: '#FFFFFF',
     padding: 20,
     borderRadius: 12,
     flexDirection: 'row',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
