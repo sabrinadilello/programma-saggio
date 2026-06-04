@@ -38,7 +38,7 @@ const PROGRAMMA_DATA = [
             { title: '1) 2017 - ABBRONZATISSIMA', courses: "Corso Gioco danza", choreographer: "Coreografia di Danila Valentini" },
             { title: '2) 2018 – ANNI 90', courses: "Corsi: Moderno 1 – Hip Hop 2 e 3", choreographer: "Coreografie di Matteo D’Alessio e Andrea Sgarra" },
             { title: '3) 2019 – CINEMUSIC', courses: "Corso Moderno 2", choreographer: "Coreografia di Matteo D’Alessio" },
-            { title: '4) 2020 – CE LA FAREMO/ANDRA’ TUTTO BEBE', courses: "Corsi: Contemporaneo 2 e 3", choreographer: "Coreografie di Rozenn Corbell" },
+            { title: '4) 2020 – CE LA FAREMO/ANDRA’ TUTTO BENE', courses: "Corsi: Contemporaneo 2 e 3", choreographer: "Coreografie di Rozenn Corbell" },
             { title: '5) 2021 – THE BLUES BROTHERS', courses: "Corso Moderno 3", choreographer: "Coreografia di Matteo D’Alessio" },
             { title: '6) 2022 - FANTASTICO', courses: "Corsi: Gioco danza, Moderno 1 e 3", choreographer: "Coreografie di Matteo D’Alessio" },
             { title: '7) 2023 - CATS', courses: "Corso Moderno 3", choreographer: "Coreografia di Matteo D’Alessio" },
