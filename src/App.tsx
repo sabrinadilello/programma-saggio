@@ -105,10 +105,10 @@ export default function App() {
             {!animationFinished && currentPage === 1 && (
                 <div className="fixed inset-0 z-[100] pointer-events-none flex overflow-hidden">
                     <div className={`w-1/2 h-full transition-transform duration-[2500ms] ease-in-out z-[101] ${curtainsOpen ? '-translate-x-full' : 'translate-x-0'}`}>
-                        <img src="/curtain-left.png" className="w-full h-full object-cover" />
+                        <img src="/curtain-left.png" className="w-full h-full object-cover" alt="" />
                     </div>
                     <div className={`w-1/2 h-full transition-transform duration-[2500ms] ease-in-out z-[101] ${curtainsOpen ? 'translate-x-full' : 'translate-x-0'}`}>
-                        <img src="/curtain-right.png" className="w-full h-full object-cover" />
+                        <img src="/curtain-right.png" className="w-full h-full object-cover" alt="" />
                     </div>
                 </div>
             )}
@@ -135,10 +135,8 @@ export default function App() {
                 {/* PAGE 1 - HOME */}
                 {currentPage === 1 && (
                     <div className="animate-fadeIn space-y-12">
-                        {/* Immagine Logo a tutto spazio (stile finestra del codice originale) */}
-                        <div className="w-full aspect-[1.6] mb-8 overflow-hidden rounded-2xl bg-white shadow-sm border border-gray-100">
-                            <img src="/logo.png" className="w-full h-full object-contain" alt="Logo" />
-                        </div>
+                        {/* Immagine Logo senza contenitore */}
+                        <img src="/logo.png" className="w-full h-auto mb-8" alt="Logo" />
 
                         <div className="space-y-6 text-gray-700 leading-relaxed text-base italic">
                             <p>Ci sono momenti che si attendono a lungo.</p>
@@ -156,20 +154,20 @@ export default function App() {
                                 <p className="font-bold text-[#c8151b] text-lg mt-6 not-italic">Questo saggio è per voi.</p>
                             </div>
                         </div>
-                        <div className="pt-4 pb-10">
+                        <div className="pt-4">
                             <p className="font-bold italic text-xl m-0">Matteo D'Alessio</p>
                             <p className="text-gray-400 text-xs uppercase tracking-widest mt-1">Direzione Artistica – Centro Studi Arti Sceniche</p>
                         </div>
                     </div>
                 )}
 
-                {/* PAGE 2 - INFO SERATA (LOCANDINA E TEATRO) */}
+                {/* PAGE 2 - INFO SERATA */}
                 {currentPage === 2 && (
                     <div className="animate-fadeIn space-y-8">
                         <h2 className="text-2xl font-bold text-gray-800 uppercase tracking-wide">Info Serata</h2>
                         <img src="/locandina.jpeg" className="w-full rounded-2xl shadow-xl border-4 border-white mb-8" alt="Locandina" />
 
-                        <div className="bg-white p-6 rounded-2xl shadow-md space-y-6 text-left">
+                        <div className="bg-white p-6 rounded-2xl shadow-md space-y-6 text-left border border-gray-100">
                             <div className="flex items-center gap-3 text-[#c8151b]">
                                 <MapPin size={28} />
                                 <h3 className="text-xl font-bold m-0 text-gray-900">Il Teatro</h3>
@@ -179,8 +177,8 @@ export default function App() {
                                 <p className="text-gray-600 text-sm mt-1">Via di S. Raffaele, 6, 00148 Roma RM</p>
                             </div>
                             <div className="flex flex-col gap-3">
-                                <button onClick={() => window.open('https://maps.google.com/?q=Teatro+San+Raffaele+Roma')} className="bg-[#c8151b] text-white py-3 rounded-xl font-bold text-center border-none cursor-pointer active:scale-95 transition-all">👉 Apri in Google Maps</button>
-                                <button onClick={() => window.open('https://www.teatrosanraffaele.it/')} className="border border-gray-300 py-3 rounded-xl font-bold text-gray-700 text-center bg-white cursor-pointer active:scale-95 transition-all">Sito Ufficiale Teatro</button>
+                                <button onClick={() => window.open('https://maps.google.com/?q=Teatro+San+Raffaele+Roma')} className="bg-[#c8151b] text-white py-3 rounded-xl font-bold border-none cursor-pointer">👉 Apri in Google Maps</button>
+                                <button onClick={() => window.open('https://www.teatrosanraffaele.it/')} className="border border-gray-300 py-3 rounded-xl font-bold text-gray-700 bg-white cursor-pointer">Sito Ufficiale Teatro</button>
                             </div>
                         </div>
                     </div>
@@ -223,9 +221,11 @@ export default function App() {
                             { n: "DANILA VALENTINI", r: "Gioco Danza" },
                             { n: "DONATELLA VERONICA", r: "Amministrazione" }
                         ].map((m, i) => (
-                            <div key={i} className="bg-white p-5 rounded-xl shadow-sm text-left">
-                                <p className="font-bold m-0 text-sm">{m.n}</p>
-                                <p className="text-[10px] text-gray-400 m-0 uppercase tracking-widest">{m.r}</p>
+                            <div key={i} className="bg-white p-5 rounded-xl shadow-sm flex items-center justify-between text-left">
+                                <div>
+                                    <p className="font-bold m-0 text-sm">{m.n}</p>
+                                    <p className="text-[10px] text-gray-400 m-0 uppercase tracking-widest">{m.r}</p>
+                                </div>
                             </div>
                         ))}
                     </div>
@@ -248,11 +248,11 @@ export default function App() {
                             <div className="flex items-center gap-3 mb-4 text-[#c8151b]">
                                 <Phone size={32} /> <h3 className="text-xl font-bold m-0 text-gray-900">Contatti</h3>
                             </div>
-                            <button onClick={() => window.open('tel:+393922752576')} className="w-full bg-white p-5 rounded-xl shadow-md border-none mb-3 cursor-pointer text-left active:scale-95 transition-all">
+                            <button onClick={() => window.open('tel:+393922752576')} className="w-full bg-white p-5 rounded-xl shadow-md border-none mb-3 cursor-pointer text-left">
                                 <p className="text-xs font-bold text-gray-400 uppercase mb-1">Telefono:</p>
                                 <p className="text-base text-gray-800 m-0 font-semibold">392 2752576</p>
                             </button>
-                            <button onClick={() => window.open('mailto:info@centrostudiartisceniche.it')} className="w-full bg-white p-5 rounded-xl shadow-md border-none cursor-pointer text-left active:scale-95 transition-all">
+                            <button onClick={() => window.open('mailto:info@centrostudiartisceniche.it')} className="w-full bg-white p-5 rounded-xl shadow-md border-none cursor-pointer text-left">
                                 <p className="text-xs font-bold text-gray-400 uppercase mb-1">Email:</p>
                                 <p className="text-sm text-gray-800 m-0 font-semibold truncate">info@centrostudiartisceniche.it</p>
                             </button>
@@ -261,17 +261,17 @@ export default function App() {
                             <div className="flex items-center gap-3 mb-4 text-[#c8151b]">
                                 <Globe size={32} /> <h3 className="text-xl font-bold m-0 text-gray-900">Online</h3>
                             </div>
-                            <button onClick={() => window.open('https://www.centrostudiartisceniche.it')} className="w-full bg-white p-5 rounded-xl shadow-md border-none mb-3 flex items-center gap-4 cursor-pointer active:scale-95 transition-all text-left">
+                            <button onClick={() => window.open('https://www.centrostudiartisceniche.it')} className="w-full bg-white p-5 rounded-xl shadow-md border-none mb-3 flex items-center gap-4 cursor-pointer text-left">
                                 <Globe size={20} className="text-gray-400" />
                                 <div className="flex-1"><p className="text-xs font-bold text-gray-400 uppercase mb-1">Sito Web:</p><p className="text-sm text-gray-800 m-0">www.centrostudiartisceniche.it</p></div>
                                 <ExternalLink size={16} className="text-[#c8151b]" />
                             </button>
-                            <button onClick={() => window.open('https://instagram.com/centrostudiartisceniche')} className="w-full bg-white p-5 rounded-xl shadow-md border-none mb-3 flex items-center gap-4 cursor-pointer active:scale-95 transition-all text-left">
+                            <button onClick={() => window.open('https://instagram.com/centrostudiartisceniche')} className="w-full bg-white p-5 rounded-xl shadow-md border-none mb-3 flex items-center gap-4 cursor-pointer text-left">
                                 <Instagram size={20} className="text-gray-400" />
                                 <div className="flex-1"><p className="text-xs font-bold text-gray-400 uppercase mb-1">Instagram:</p><p className="text-sm text-gray-800 m-0">@centrostudiartisceniche</p></div>
                                 <ExternalLink size={16} className="text-[#c8151b]" />
                             </button>
-                            <button onClick={() => window.open('https://facebook.com/centrostudiartisceniche')} className="w-full bg-white p-5 rounded-xl shadow-md border-none flex items-center gap-4 cursor-pointer active:scale-95 transition-all text-left">
+                            <button onClick={() => window.open('https://facebook.com/centrostudiartisceniche')} className="w-full bg-white p-5 rounded-xl shadow-md border-none flex items-center gap-4 cursor-pointer text-left">
                                 <Facebook size={20} className="text-gray-400" />
                                 <div className="flex-1"><p className="text-xs font-bold text-gray-400 uppercase mb-1">Facebook:</p><p className="text-sm text-gray-800 m-0">Centro Studi Arti Sceniche</p></div>
                                 <ExternalLink size={16} className="text-[#c8151b]" />
