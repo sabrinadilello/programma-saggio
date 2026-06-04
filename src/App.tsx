@@ -331,7 +331,7 @@ export default function App() {
                                     { n: "ANDREA SGARRA", r: "Insegnante corsi di hip hop" },
                                     { n: "DANILA VALENTINI", r: "Insegnante corso di gioco danza e propedeutico" },
                                     { n: "DONATELLA PANE", r: "Assistente e collaboratrice amministrativa" },
-                                    { n: "MATTEO D’ALESSIO", r: "Direttore artistico e insegnante corsi di danza" }
+                                    { n: "MATTEO D’ALESSIO", r: "Direttore artistico e insegnante corsi danza classica e moderna" }
                                 ].map((m, i) => (
                                     <div key={i} className="bg-white p-5 rounded-xl shadow-sm border border-gray-100">
                                         <p className="font-extrabold text-gray-900 m-0 text-xs uppercase tracking-tight">{m.n}</p>
